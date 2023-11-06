@@ -1,0 +1,11 @@
+{
+  "name": "pwrcode_webservice",
+  "packageManager": "yarn@4.0.1",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
