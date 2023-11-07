@@ -39,7 +39,7 @@ COPY --chown=node:node . .
 
 # Run the build command which creates the production bundle
 # RUN npm run build
-RUN yarn build 
+RUN yarn build
 
 # Set NODE_ENV environment variable
 ENV NODE_ENV production
