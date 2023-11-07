@@ -1,0 +1,38 @@
+name: Build and Push Docker Image
+on:
+  push:
+    branches:
+      - develop
+env:
+  REGISTRY: ghcr.io
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - image: pwrcode-frontend
+            dockerfile: apps/pwrcode-frontend
+          - image: pwrcode-backend
+            dockerfile: apps/pwrcode-backend
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: Login in to Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.IMHOHEONG_GITHUB_ACCESS_TOKEN }}
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: ${{ env.REGISTRY }}/${{ matrix.image }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
