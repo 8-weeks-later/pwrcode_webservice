@@ -29,6 +29,8 @@ COPY . .
 # ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN yarn build
+# RUN ls -l
+RUN ls -al .next
 
 # If using npm comment out above and use below instead
 # RUN npm run build
@@ -49,7 +51,6 @@ COPY --from=builder /app/public ./public
 # Set the correct permission for prerender cache
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
-RUN echo $(pwd)
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
