@@ -7,7 +7,7 @@ import { AppService } from './app.service';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '0.0.0.0',
+      host: 'mariadb',
       port: 3306,
       username: 'root',
       password: 'root',
