@@ -2,6 +2,8 @@
   "name": "pwrcode_webservice",
   "packageManager": "yarn@4.0.1",
   "devDependencies": {
+    "eslint": "^8.53.0",
+    "prettier": "3.0.3",
     "typescript": "^5.2.2"
   },
   "workspaces": [
