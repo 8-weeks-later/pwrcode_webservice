@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ArticlesModule } from './articles/articles.module';
-import { NewsModule } from './news/news.module';
 import { ConfigModule } from '@nestjs/config';
+import { ArticleModule } from './article/article.module';
+import { Article } from './article/entities/article.entity';
 
 @Module({
   imports: [
@@ -21,12 +21,10 @@ import { ConfigModule } from '@nestjs/config';
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASS,
       database: 'test',
-      entities: [],
-      synchronize: true,
+      entities: [Article],
+      synchronize: false,
     }),
-    
-    ArticlesModule,
-    NewsModule,
+    ArticleModule,
   ],
   controllers: [AppController],
   providers: [AppService],
