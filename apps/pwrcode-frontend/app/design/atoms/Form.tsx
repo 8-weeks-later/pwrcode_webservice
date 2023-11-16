@@ -7,6 +7,7 @@ import {
     FormHelperText,
     Input
 } from '@chakra-ui/react'
+import React from 'react';
 import { SetStateAction, useState } from 'react';
 
 export interface FormType {
