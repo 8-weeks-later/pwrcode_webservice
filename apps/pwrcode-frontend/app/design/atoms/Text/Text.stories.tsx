@@ -13,9 +13,7 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: {},
 } satisfies Meta<typeof Text>;
 
 export default meta;
@@ -31,22 +29,20 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
+export const Title: Story = {
   args: {
-    label: 'Button',
+    font: 'Ubuntu',
+    children: 'PwrCode',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
   },
 };
 
-export const Large: Story = {
+export const SubTitle: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    font: 'Ubuntu',
+    children: 'Empowering IT Excellence',
+    fontStyle: 'normal',
+    fontWeight: '200',
   },
 };
