@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Navbar } from './Navbar';
+import { Component as CardGroup } from './CardGroup';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Organisms/Navbar',
-  component: Navbar,
+  title: 'Organisms/CardGroup',
+  component: CardGroup,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -16,7 +16,7 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof CardGroup>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

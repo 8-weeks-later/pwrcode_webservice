@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Box } from './Box';
+import { Component as Collection } from './Collection';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Molecules/Box',
-  component: Box,
+  title: 'Organisms/Collection',
+  component: Collection,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -16,7 +16,7 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof Box>;
+} satisfies Meta<typeof Collection>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Logo } from './Logo';
+import { Box } from './Box';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Atoms/Logo',
-  component: Logo,
+  title: 'Molecules/Box',
+  component: Box,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -15,8 +15,15 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    children: {
+      options: ['First', 'TextBox'],
+      mapping: {
+        First: <div>a</div>,
+        // TextBox :
+      },
+    },
   },
-} satisfies Meta<typeof Logo>;
+} satisfies Meta<typeof Box>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -26,25 +33,12 @@ export const Primary: Story = {
   args: {
     primary: true,
     label: 'Button',
+    children: 'First',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
     label: 'Button',
   },
 };

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Form } from './Form';
+import { Card } from './Card';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Atoms/Form',
-  component: Form,
+  title: 'Molecules/Card',
+  component: Card,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -16,35 +16,35 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof Form>;
+} satisfies Meta<typeof Card>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
-};
+// export const Primary: Story = {
+//   args: {
+//     primary: true,
+//     label: 'Button',
+//   },
+// };
 
-export const Secondary: Story = {
-  args: {
-    label: 'Button',
-  },
-};
+// export const Secondary: Story = {
+//   args: {
+//     label: 'Button',
+//   },
+// };
 
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
+// export const Large: Story = {
+//   args: {
+//     size: 'large',
+//     label: 'Button',
+//   },
+// };
 
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
-};
+// export const Small: Story = {
+//   args: {
+//     size: 'small',
+//     label: 'Button',
+//   },
+// };
