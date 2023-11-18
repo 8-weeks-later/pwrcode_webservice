@@ -6,6 +6,8 @@ import React from 'react';
 export interface TextProps {
   font: string;
   children: string;
+  fontStyle: string;
+  fontWeight: string;
 }
 
 export function Text(props: TextProps) {
@@ -13,5 +15,7 @@ export function Text(props: TextProps) {
 }
 
 const Component = styled.span<TextProps>`
-  font: ${(props) => props.font};
+  font-family: ${(props) => props.font};
+  font-style: ${(props) => props.fontStyle};
+  font-weight: ${(props) => props.fontWeight};
 `;
