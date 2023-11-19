@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import styled from '@emotion/styled';
-import { SetStateAction, useState } from 'react';
 
 export interface FormProps {
   placeholder: string;

@@ -22,29 +22,23 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const ReactLogo: Story = {
   args: {
     width: '10vw',
     src: `react_logo.svg`,
   },
 };
 
-export const Secondary: Story = {
+export const VueLogo: Story = {
   args: {
-    label: 'Button',
+    width: '10vw',
+    src: `vue_logo.svg`,
   },
 };
 
-export const Large: Story = {
+export const SvelteLogo: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    width: '10vw',
+    src: `svelte_logo.svg`,
   },
 };
