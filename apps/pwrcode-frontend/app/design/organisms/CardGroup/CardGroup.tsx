@@ -1,12 +1,20 @@
 'use client';
 import styled from '@emotion/styled';
+import { ReactElement, ReactNode } from 'react';
+import { CardProps } from '../../molecules/Card/Card';
 
 export interface CardGroupProps {
-  children: React.ReactNode;
+  children: ReactElement<CardProps>;
 }
 
-export function Component({ children }: CardGroupProps) {
-  return <CardGroup>{children}</CardGroup>;
+export function Component(props: CardGroupProps) {
+  return <CardGroup>{props.children}</CardGroup>;
 }
 
-const CardGroup = styled.div``;
+const CardGroup = styled.div`
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+`;

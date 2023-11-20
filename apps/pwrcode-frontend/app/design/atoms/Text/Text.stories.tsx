@@ -23,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     font: 'Ubuntu',
-    children: 'ABCDEF',
+    text: 'ABCDEF',
     fontStyle: 'normal',
     fontWeight: '400',
   },
@@ -32,7 +32,7 @@ export const Primary: Story = {
 export const Title: Story = {
   args: {
     font: 'Ubuntu',
-    children: 'PwrCode',
+    text: 'PwrCode',
     fontStyle: 'normal',
     fontWeight: 'bold',
   },
@@ -41,8 +41,17 @@ export const Title: Story = {
 export const SubTitle: Story = {
   args: {
     font: 'Ubuntu',
-    children: 'Empowering IT Excellence',
+    text: 'Empowering IT Excellence',
     fontStyle: 'normal',
     fontWeight: '200',
+  },
+};
+
+export const ReactText: Story = {
+  args: {
+    font: 'Ubuntu',
+    text: 'React',
+    fontStyle: 'normal',
+    fontWeight: '400',
   },
 };

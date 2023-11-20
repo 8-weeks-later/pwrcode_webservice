@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Component as Navbar } from './Navbar';
+import { Link } from './Link';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Organisms/Navbar',
-  component: Navbar,
+  title: 'Atoms/Link',
+  component: Link,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -13,38 +13,48 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} satisfies Meta<typeof Navbar>;
+  argTypes: {},
+} satisfies Meta<typeof Link>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const MainLink: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    font: 'Ubuntu',
+    text: 'Learn More',
+    href: '#',
+    afterIcon: '->',
+    fontStyle: 'normal',
+    fontWeight: '400',
   },
 };
 
-export const Secondary: Story = {
+export const NavbarHomeLink: Story = {
   args: {
-    label: 'Button',
+    font: 'Ubuntu',
+    text: 'Home',
+    href: '#',
+    fontStyle: 'normal',
+    fontWeight: '400',
   },
 };
-
-export const Large: Story = {
+export const NavbarKnowledgeLink: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    font: 'Ubuntu',
+    text: 'Knowledge'.toUpperCase(),
+    href: '#',
+    fontStyle: 'normal',
+    fontWeight: '400',
   },
 };
-
-export const Small: Story = {
+export const NavbarComputerScienceLink: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    font: 'Ubuntu',
+    text: 'Computer Science'.toUpperCase(),
+    href: '#',
+    fontStyle: 'normal',
+    fontWeight: '400',
   },
 };

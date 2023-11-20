@@ -9,4 +9,8 @@ export function Component({ children }: LogoGroupProps) {
   return <LogoGroup>{children}</LogoGroup>;
 }
 
-const LogoGroup = styled.div``;
+const LogoGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: '10px';
+`;
