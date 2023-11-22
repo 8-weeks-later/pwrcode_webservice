@@ -22,39 +22,46 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const MainLink: Story = {
   args: {
-    font: 'Ubuntu',
+    fontFamily: 'Ubuntu',
     text: 'Learn More',
     href: '#',
     afterIcon: '->',
     fontStyle: 'normal',
     fontWeight: '400',
+    margin: '0 11.19rem 3.25rem',
+    whiteSpace: 'nowrap',
+    textDecorationLine: 'none',
+    color: 'black',
   },
 };
 
 export const NavbarHomeLink: Story = {
   args: {
-    font: 'Ubuntu',
+    fontFamily: 'Ubuntu',
     text: 'Home',
     href: '#',
     fontStyle: 'normal',
     fontWeight: '400',
+    margin: '0',
   },
 };
 export const NavbarKnowledgeLink: Story = {
   args: {
-    font: 'Ubuntu',
+    fontFamily: 'Ubuntu',
     text: 'Knowledge'.toUpperCase(),
     href: '#',
     fontStyle: 'normal',
     fontWeight: '400',
+    margin: '0',
   },
 };
 export const NavbarComputerScienceLink: Story = {
   args: {
-    font: 'Ubuntu',
+    fontFamily: 'Ubuntu',
     text: 'Computer Science'.toUpperCase(),
     href: '#',
     fontStyle: 'normal',
     fontWeight: '400',
+    margin: '0',
   },
 };

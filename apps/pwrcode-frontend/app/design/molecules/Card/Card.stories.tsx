@@ -30,7 +30,12 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const MainCard: Story = {
   args: {
+    width: '28.625rem',
+    height: '29.5rem',
+    flexShrink: '0',
     flexDirection: 'column',
+    border: '10px solid rgba(176, 166, 149, 0.50)',
+    padding: '1.19rem 1.75rem 3.25rem 1.75rem',
     children: (
       <>
         <Text {...ReactText.args} />

@@ -22,36 +22,48 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
   args: {
-    font: 'Ubuntu',
+    fontFamily: 'Ubuntu',
     text: 'ABCDEF',
     fontStyle: 'normal',
     fontWeight: '400',
+    textAlign: 'center',
+    fontSize: '1.3125rem',
+    lineHeight: '1.9375rem',
   },
 };
 
 export const Title: Story = {
   args: {
-    font: 'Ubuntu',
+    fontFamily: 'Ubuntu',
     text: 'PwrCode',
     fontStyle: 'normal',
     fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: '1.3125rem',
+    lineHeight: '1.9375rem',
   },
 };
 
 export const SubTitle: Story = {
   args: {
-    font: 'Ubuntu',
+    fontFamily: 'Ubuntu',
     text: 'Empowering IT Excellence',
     fontStyle: 'normal',
     fontWeight: '200',
+    textAlign: 'center',
+    fontSize: '1.3125rem',
+    lineHeight: '1.9375rem',
   },
 };
 
 export const ReactText: Story = {
   args: {
-    font: 'Ubuntu',
+    fontFamily: 'Ubuntu',
     text: 'React',
     fontStyle: 'normal',
     fontWeight: '400',
+    textAlign: 'center',
+    fontSize: '1.3125rem',
+    lineHeight: '1.9375rem',
   },
 };

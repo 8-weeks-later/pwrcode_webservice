@@ -4,10 +4,13 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 export interface TextProps {
-  font: string;
+  fontFamily: string;
   text: string;
+  textAlign: string;
   fontStyle: string;
   fontWeight: string;
+  fontSize: string;
+  lineHeight: string;
 }
 
 export function Text(props: TextProps) {
@@ -15,7 +18,10 @@ export function Text(props: TextProps) {
 }
 
 const Component = styled.span<TextProps>`
-  font-family: ${(props) => props.font};
+  text-align: ${(props) => props.textAlign};
+  font-family: ${(props) => props.fontFamily};
   font-style: ${(props) => props.fontStyle};
   font-weight: ${(props) => props.fontWeight};
+  font-size: ${(props) => props.fontSize};
+  line-height: ${(props) => props.lineHeight};
 `;
