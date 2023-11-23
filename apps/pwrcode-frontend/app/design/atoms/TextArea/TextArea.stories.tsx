@@ -32,7 +32,6 @@ export const MainTextArea: Story = {
     fontSize: '1rem',
     lineHeight: '1.5rem',
     textAlign: 'center',
-    height: '21.9375rem',
     flexShrink: '0',
   },
 };

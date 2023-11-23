@@ -3,19 +3,37 @@ import styled from '@emotion/styled';
 
 export interface CollectionProps {
   children: React.ReactNode;
-  flexDirection: string;
+  display?: string;
+  justifyContent?: string;
+  alignItems?: string;
+  flexDirection?: string;
   gap?: string;
+  width?: string;
+  height?: string;
 }
 
-export function Component(props: CollectionProps) {
+export function Collection(props: CollectionProps) {
   return (
-    <Collection flexDirection={props.flexDirection}>
+    <Component
+      width={props.width}
+      height={props.height}
+      display={props.display}
+      justifyContent={props.justifyContent}
+      alignItems={props.alignItems}
+      flexDirection={props.flexDirection}
+      gap={props.gap}
+    >
       {props.children}
-    </Collection>
+    </Component>
   );
 }
 
-const Collection = styled.div<CollectionProps>`
-  display: flex;
+const Component = styled.div<CollectionProps>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  display: ${(props) => props.display};
+  justify-content: ${(props) => props.justifyContent};
+  align-items: ${(props) => props.alignItems};
   flex-direction: ${(props) => props.flexDirection};
+  gap: ${(props) => props.gap};
 `;

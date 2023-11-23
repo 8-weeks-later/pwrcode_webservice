@@ -7,9 +7,11 @@ import { KeyWordForm, SkillForm } from '../../atoms/Form/Form.stories';
 import { SubTitle, Title } from '../../atoms/Text/Text.stories';
 import { Link } from '../../atoms/Link/Link';
 import {
+  NavbarCodeBoxLink,
   NavbarComputerScienceLink,
   NavbarHomeLink,
   NavbarKnowledgeLink,
+  NavbarTitleLink,
 } from '../../atoms/Link/Link.stories';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -44,7 +46,8 @@ export const MainBox: Story = {
 
 export const MainBottomBox: Story = {
   args: {
-    flexDirection: 'column',
+    flexDirection: 'row',
+    gap: '10px',
     children: (
       <>
         <Form {...SkillForm.args} />
@@ -58,11 +61,19 @@ export const MainNavbarBox: Story = {
   args: {
     flexDirection: 'row',
     gap: '20px',
+    // width: '120rem',
+    height: '5.08331rem',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexShrink: '0',
+    background: '#B0A695',
     children: (
       <>
+        <Link {...NavbarTitleLink.args} />
         <Link {...NavbarHomeLink.args} />
         <Link {...NavbarKnowledgeLink.args} />
         <Link {...NavbarComputerScienceLink.args} />
+        <Link {...NavbarCodeBoxLink.args} />
       </>
     ),
   },

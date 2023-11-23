@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CardGroup } from './CardGroup';
-import { Card } from '../../molecules/Card/Card';
-import { MainCard } from '../../molecules/Card/Card.stories';
+import { MainPage } from './MainPage';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Organisms/CardGroup',
-  component: CardGroup,
+  title: 'Pages/MainPage',
+  component: MainPage,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -18,22 +16,14 @@ const meta = {
   argTypes: {
     // backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof CardGroup>;
+} satisfies Meta<typeof MainPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const MainCardGroup: Story = {
-  args: {
-    // primary: true,
-    width: '40vmax',
-    padding: '1.17rem',
-    children: (
-      <>
-        <Card {...MainCard.args} />
-        <Card {...MainCard.args} />
-      </>
-    ),
-  },
-};
+// export const MainPageStory: Story = {
+//   args: {
+//     children: <MainTemplate {...}/>,
+//   },
+// };

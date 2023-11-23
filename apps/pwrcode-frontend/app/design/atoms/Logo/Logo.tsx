@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 export interface ImageProps {
-  width: string;
+  width?: string;
   src: string;
 }
 

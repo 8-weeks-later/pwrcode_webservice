@@ -7,10 +7,11 @@ export interface LinkProps {
   href: string;
   text?: string;
   afterIcon?: string;
-  fontFamily: string;
-  fontStyle: string;
-  fontWeight: string;
-  margin: string;
+  fontFamily?: string;
+  fontStyle?: string;
+  fontWeight?: string;
+  fontSize?: string;
+  margin?: string;
   whiteSpace?: string;
   textDecorationLine?: string;
   color?: string;
@@ -24,6 +25,7 @@ export function Link(props: LinkProps) {
       fontFamily={props.fontFamily}
       fontStyle={props.fontStyle}
       fontWeight={props.fontWeight}
+      fontSize={props.fontSize}
       margin={props.margin}
       whiteSpace={props.whiteSpace}
       textDecorationLine={props.textDecorationLine}
@@ -38,6 +40,7 @@ const Component = styled.a<LinkProps>`
   font-family: ${(props) => props.fontFamily};
   font-style: ${(props) => props.fontStyle};
   font-weight: ${(props) => props.fontWeight};
+  font-size: ${(props) => props.fontSize};
   margin: ${(props) => props.margin};
   white-space: ${(props) => props.whiteSpace};
   text-decoration-line: ${(props) => props.textDecorationLine};

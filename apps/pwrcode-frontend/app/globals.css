@@ -105,3 +105,8 @@ a {
     color-scheme: dark;
   }
 }
+
+#storybook-root,
+.sb-show-main.sb-main-centered #storybook-root {
+  padding: 0rem;
+}

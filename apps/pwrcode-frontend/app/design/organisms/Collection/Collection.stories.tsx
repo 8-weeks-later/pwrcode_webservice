@@ -1,7 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Component as Collection } from './Collection';
-import { MainBox, MainNavbarBox } from '../../molecules/Box/Box.stories';
+import { Collection } from './Collection';
+import {
+  MainBottomBox,
+  MainBox,
+  MainNavbarBox,
+} from '../../molecules/Box/Box.stories';
 import { Box } from '../../molecules/Box/Box';
 import { Link } from '../../atoms/Link/Link';
 
@@ -27,9 +31,19 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const MainCollection: Story = {
   args: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'column',
-    gap: '10px',
-    children: <Box {...MainBox.args} />,
+    width: '50vmax',
+    height: 'inherit',
+    gap: '5vmax',
+    children: (
+      <>
+        <Box {...MainBox.args} />
+        <Box {...MainBottomBox.args} />
+      </>
+    ),
   },
 };
 

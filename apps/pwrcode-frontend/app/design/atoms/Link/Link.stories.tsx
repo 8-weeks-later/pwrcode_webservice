@@ -42,7 +42,10 @@ export const NavbarHomeLink: Story = {
     href: '#',
     fontStyle: 'normal',
     fontWeight: '400',
+    fontSize: '0.75rem',
     margin: '0',
+    textDecorationLine: 'none',
+    color: 'black',
   },
 };
 export const NavbarKnowledgeLink: Story = {
@@ -52,7 +55,10 @@ export const NavbarKnowledgeLink: Story = {
     href: '#',
     fontStyle: 'normal',
     fontWeight: '400',
+    fontSize: '0.75rem',
     margin: '0',
+    textDecorationLine: 'none',
+    color: 'black',
   },
 };
 export const NavbarComputerScienceLink: Story = {
@@ -62,6 +68,34 @@ export const NavbarComputerScienceLink: Story = {
     href: '#',
     fontStyle: 'normal',
     fontWeight: '400',
+    fontSize: '0.75rem',
     margin: '0',
+    textDecorationLine: 'none',
+    color: 'black',
+  },
+};
+export const NavbarCodeBoxLink: Story = {
+  args: {
+    fontFamily: 'Ubuntu',
+    text: 'CodeBox'.toUpperCase(),
+    href: '#',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: '0.75rem',
+    margin: '0',
+    textDecorationLine: 'none',
+    color: 'black',
+  },
+};
+export const NavbarTitleLink: Story = {
+  args: {
+    fontFamily: 'Ubuntu',
+    text: 'PwrCode',
+    href: '#',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    margin: '0',
+    textDecorationLine: 'none',
+    color: 'black',
   },
 };

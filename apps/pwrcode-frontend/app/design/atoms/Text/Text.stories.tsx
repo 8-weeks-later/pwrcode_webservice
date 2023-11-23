@@ -39,8 +39,8 @@ export const Title: Story = {
     fontStyle: 'normal',
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: '1.3125rem',
-    lineHeight: '1.9375rem',
+    fontSize: '3.092vmax',
+    lineHeight: '3.958vmax',
   },
 };
 
@@ -51,8 +51,8 @@ export const SubTitle: Story = {
     fontStyle: 'normal',
     fontWeight: '200',
     textAlign: 'center',
-    fontSize: '1.3125rem',
-    lineHeight: '1.9375rem',
+    fontSize: '1.113vmax',
+    lineHeight: '1.917vmax',
   },
 };
 

@@ -24,21 +24,21 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const ReactLogo: Story = {
   args: {
-    width: '10vw',
+    width: '10vmax',
     src: `react_logo.svg`,
   },
 };
 
 export const VueLogo: Story = {
   args: {
-    width: '10vw',
+    width: '10vmax',
     src: `vue_logo.svg`,
   },
 };
 
 export const SvelteLogo: Story = {
   args: {
-    width: '10vw',
+    width: '10vmax',
     src: `svelte_logo.svg`,
   },
 };

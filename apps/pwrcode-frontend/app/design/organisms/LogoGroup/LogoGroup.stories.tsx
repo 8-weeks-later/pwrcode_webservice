@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Component as LogoGroup } from './LogoGroup';
+import { LogoGroup } from './LogoGroup';
 import { Logo } from '../../atoms/Logo/Logo';
 import { ReactLogo, SvelteLogo, VueLogo } from '../../atoms/Logo/Logo.stories';
 
@@ -26,6 +26,10 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const MainLogoGroup: Story = {
   args: {
+    width: '10vmax',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '20px',
     children: (
       <>
         <Logo {...ReactLogo.args} />

@@ -7,8 +7,8 @@ export interface CardProps extends PropsWithChildren {
   children: ReactElement;
   flexDirection: string;
   border: string;
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   flexShrink: string;
   padding: string;
 }
