@@ -41,6 +41,7 @@ export const Title: Story = {
     textAlign: 'center',
     fontSize: '3.092vmax',
     lineHeight: '3.958vmax',
+    color: '#505D68',
   },
 };
 
@@ -53,6 +54,7 @@ export const SubTitle: Story = {
     textAlign: 'center',
     fontSize: '1.113vmax',
     lineHeight: '1.917vmax',
+    color: '#505D68',
   },
 };
 
@@ -61,9 +63,10 @@ export const ReactText: Story = {
     fontFamily: 'Ubuntu',
     text: 'React',
     fontStyle: 'normal',
-    fontWeight: '400',
+    fontWeight: 'bold',
     textAlign: 'center',
     fontSize: '1.3125rem',
     lineHeight: '1.9375rem',
+    color: '#505D68',
   },
 };

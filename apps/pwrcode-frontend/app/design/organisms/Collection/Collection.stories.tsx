@@ -8,6 +8,8 @@ import {
 } from '../../molecules/Box/Box.stories';
 import { Box } from '../../molecules/Box/Box';
 import { Link } from '../../atoms/Link/Link';
+import { DropDown } from '../../molecules/DropDown/DropDown';
+import { MainDropDown } from '../../molecules/DropDown/DropDown.stories';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -31,16 +33,18 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const MainCollection: Story = {
   args: {
-    display: 'flex',
+    display: 'grid',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignContent: 'center',
+    gridTemplateColumns: 'repeat(auto-fill,1fr)',
     flexDirection: 'column',
-    width: '50vmax',
-    height: 'inherit',
-    gap: '5vmax',
+    width: '45vmax',
+    gap: '2vmax',
+    component: 'MainCollection',
     children: (
       <>
         <Box {...MainBox.args} />
+        <DropDown {...MainDropDown.args} />
         <Box {...MainBottomBox.args} />
       </>
     ),
@@ -50,6 +54,9 @@ export const MainCollection: Story = {
 export const MainNavBarCollection: Story = {
   args: {
     flexDirection: 'column',
+    position: 'fixed',
+    zIndex: '3',
+    width: '100vmax',
     children: <Box {...MainNavbarBox.args} />,
   },
 };

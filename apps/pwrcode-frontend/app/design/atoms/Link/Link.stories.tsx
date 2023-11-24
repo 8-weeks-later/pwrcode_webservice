@@ -28,7 +28,6 @@ export const MainLink: Story = {
     afterIcon: '->',
     fontStyle: 'normal',
     fontWeight: '400',
-    margin: '0 11.19rem 3.25rem',
     whiteSpace: 'nowrap',
     textDecorationLine: 'none',
     color: 'black',
@@ -38,7 +37,7 @@ export const MainLink: Story = {
 export const NavbarHomeLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
-    text: 'Home',
+    text: 'Home'.toUpperCase(),
     href: '#',
     fontStyle: 'normal',
     fontWeight: '400',

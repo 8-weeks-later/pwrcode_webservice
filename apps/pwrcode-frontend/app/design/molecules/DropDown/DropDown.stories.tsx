@@ -24,7 +24,20 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
   args: {
-    data: [{value:'a', name: 'a'}]
+    data: [{ value: 'a', name: 'a' }],
+  },
+};
 
+export const MainDropDown: Story = {
+  args: {
+    appearance: 'none',
+    background: '#fff',
+    border: '1px solid #c2d1d9',
+    color: 'black',
+    data: [
+      { value: 'React', name: 'React' },
+      { value: 'Vue', name: 'Vue' },
+      { value: 'Svelte', name: 'Svelte' },
+    ],
   },
 };

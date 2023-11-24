@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { TextArea } from './TextArea';
+import { data } from './TextArea.data';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -23,9 +24,7 @@ type Story = StoryObj<typeof meta>;
 export const MainTextArea: Story = {
   args: {
     fontFamily: 'Ubuntu',
-    text: `ABCDEF
-      sfsf
-    `,
+    text: data,
     fontStyle: 'normal',
     fontWeight: '400',
     margin: '0.94rem 0 1rem',
@@ -33,5 +32,6 @@ export const MainTextArea: Story = {
     lineHeight: '1.5rem',
     textAlign: 'center',
     flexShrink: '0',
+    color: '#505D68',
   },
 };

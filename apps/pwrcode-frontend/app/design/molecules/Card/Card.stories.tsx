@@ -32,8 +32,14 @@ export const MainCard: Story = {
   args: {
     flexShrink: '0',
     flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '30vmax',
+    height: '40vmax',
     border: '10px solid rgba(176, 166, 149, 0.50)',
     padding: '1.19rem 1.75rem 3.25rem 1.75rem',
+    animation: '15s linear 1s infinite running slideintest',
+    background: '#F2F5F7',
     children: (
       <>
         <Text {...ReactText.args} />

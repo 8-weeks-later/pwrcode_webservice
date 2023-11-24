@@ -35,6 +35,10 @@ type Story = StoryObj<typeof meta>;
 export const MainLayoutStory: Story = {
   args: {
     display: 'flex',
+    zIndex: '1',
+    position: 'fixed',
+    width: '100vmax',
+    height: '100vmin',
     background: 'linear-gradient(0deg, #F2F5F7 50%, #EBE3D5 50%,#F3EEEA 100%)',
     children: (
       <>

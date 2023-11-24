@@ -23,11 +23,19 @@ type Story = StoryObj<typeof meta>;
 export const SkillForm: Story = {
   args: {
     placeholder: 'Skills',
+    appearance: 'none',
+    background: '#fff',
+    border: '1px solid #c2d1d9',
+    color: 'black',
   },
 };
 
 export const KeyWordForm: Story = {
   args: {
     placeholder: 'type keyword...',
+    appearance: 'none',
+    background: '#fff',
+    border: '1px solid #c2d1d9',
+    color: 'black',
   },
 };

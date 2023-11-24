@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>;
 export const MainCardGroup: Story = {
   args: {
     // primary: true,
-    width: '40vmax',
+    width: '35vmax',
     padding: '1.17rem',
     children: (
       <>

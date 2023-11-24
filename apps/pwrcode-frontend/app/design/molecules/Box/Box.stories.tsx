@@ -50,7 +50,7 @@ export const MainBottomBox: Story = {
     gap: '10px',
     children: (
       <>
-        <Form {...SkillForm.args} />
+        {/* <Form {...SkillForm.args} /> */}
         <Form {...KeyWordForm.args} />
       </>
     ),
@@ -62,7 +62,7 @@ export const MainNavbarBox: Story = {
     flexDirection: 'row',
     gap: '20px',
     // width: '120rem',
-    height: '5.08331rem',
+    height: '5.03vmax',
     justifyContent: 'center',
     alignItems: 'center',
     flexShrink: '0',

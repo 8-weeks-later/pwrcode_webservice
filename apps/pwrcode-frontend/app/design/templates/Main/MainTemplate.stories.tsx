@@ -35,9 +35,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const MainTemplateStory: Story = {
   args: {
-    display: 'grid',
     height: '100vmin',
-    background: 'linear-gradient(0deg, #F2F5F7 50%, #EBE3D5 50%,#F3EEEA 100%)',
     children: (
       <>
         <Collection {...MainNavBarCollection.args} />

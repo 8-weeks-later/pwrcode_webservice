@@ -13,6 +13,8 @@ interface BoxProps extends PropsWithChildren {
   alignItems?: string;
   flexShrink?: string;
   background?: string;
+  zIndex?: string;
+  position?: string;
 }
 
 export function Box(props: BoxProps) {
@@ -26,6 +28,8 @@ export function Box(props: BoxProps) {
       alignItems={props.alignItems}
       flexShrink={props.flexShrink}
       background={props.background}
+      zIndex={props.zIndex}
+      position={props.position}
     >
       {props.children}
     </Component>
@@ -42,4 +46,6 @@ const Component = styled.div<BoxProps>`
   align-items: ${(props) => props.alignItems};
   flex-shrink: ${(props) => props.flexShrink};
   background: ${(props) => props.background};
+  z-index: ${(props) => props.zIndex};
+  position: ${(props) => props.position};
 `;

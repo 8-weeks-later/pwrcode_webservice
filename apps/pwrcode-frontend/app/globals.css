@@ -109,4 +109,16 @@ a {
 #storybook-root,
 .sb-show-main.sb-main-centered #storybook-root {
   padding: 0rem;
+  margin: 0rem;
+}
+
+@keyframes slideintest {
+  from {
+    transform: translate(0px, -100vmin);
+  }
+
+  to {
+    /* height: 1v; */
+    transform: translate(0px, 100vmin);
+  }
 }
