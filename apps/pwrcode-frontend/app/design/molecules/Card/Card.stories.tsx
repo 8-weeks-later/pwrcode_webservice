@@ -70,3 +70,46 @@ export const SearchCard: Story = {
     ),
   },
 };
+
+export const DetailCard: Story = {
+  args: {
+    flexShrink: '0',
+    flexDirection: 'column',
+    justifyContent: 'stretch',
+    alignItems: 'center',
+    width: '90vmax',
+    height: '60vmax',
+    border: '10px solid rgba(176, 166, 149, 0.50)',
+    padding: '1.19rem 1.75rem 3.25rem 1.75rem',
+    background: '#F2F5F7',
+    children: (
+      <>
+        <Text {...ReactText.args} />
+        <TextArea {...MainTextArea.args} />
+        <TextArea {...MainTextArea.args} />
+        <Link {...MainLink.args} />
+      </>
+    ),
+  },
+};
+
+export const DetailErrorCard: Story = {
+  args: {
+    flexShrink: '0',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '90vmax',
+    height: '20vmax',
+    border: '10px solid rgba(176, 166, 149, 0.50)',
+    padding: '1.19rem 1.75rem 3.25rem 1.75rem',
+    background: '#F2F5F7',
+    children: (
+      <>
+        <Text {...ReactText.args} />
+        <TextArea {...MainTextArea.args} />
+        <Link {...MainLink.args} />
+      </>
+    ),
+  },
+};

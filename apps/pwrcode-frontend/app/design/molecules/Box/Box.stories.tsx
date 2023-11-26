@@ -63,10 +63,10 @@ export const MainBottomBox: Story = {
 export const MainNavbarBox: Story = {
   args: {
     flexDirection: 'row',
-    gap: '20px',
-    // width: '120rem',
+    gap: '3.958vmax',
+    padding: '0 0 0 12.37vmax',
     height: '5.03vmax',
-    justifyContent: 'center',
+    justifyContent: 'start',
     alignItems: 'center',
     flexShrink: '0',
     background: '#B0A695',

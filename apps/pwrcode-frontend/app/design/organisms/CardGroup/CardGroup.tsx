@@ -19,6 +19,7 @@ export function CardGroup(props: CardGroupProps) {
   return (
     <Component
       width={props.width}
+      height={props.height}
       overflow={props.overflow}
       padding={props.padding}
       animation={props.animation}
@@ -34,6 +35,7 @@ export function CardGroup(props: CardGroupProps) {
 const Component = styled.div<CardGroupProps>`
   display: flex;
   width: ${(props) => props.width};
+  height: ${(props) => props.height};
   flex-direction: column;
   padding: ${(props) => props.padding};
   animation: ${(props) => props.animation};

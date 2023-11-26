@@ -6,6 +6,7 @@ import React from 'react';
 interface BoxProps extends PropsWithChildren {
   children: ReactElement;
   flexDirection: string;
+  padding?: string;
   gap?: string;
   width?: string;
   height?: string;
@@ -30,6 +31,7 @@ export function Box(props: BoxProps) {
       background={props.background}
       zIndex={props.zIndex}
       position={props.position}
+      padding={props.padding}
     >
       {props.children}
     </Component>
@@ -48,4 +50,5 @@ const Component = styled.div<BoxProps>`
   background: ${(props) => props.background};
   z-index: ${(props) => props.zIndex};
   position: ${(props) => props.position};
+  padding: ${(props) => props.padding};
 `;

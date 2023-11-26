@@ -16,6 +16,7 @@ export interface TextAreaProps {
   height?: string;
   flexShrink?: string;
   color?: string;
+  flex?: string;
 }
 
 export function TextArea(props: TextAreaProps) {
@@ -32,6 +33,7 @@ export function TextArea(props: TextAreaProps) {
       height={props.height}
       flexShrink={props.flexShrink}
       color={props.color}
+      flex={props.flex}
     >
       {props.text}
     </Component>
@@ -50,4 +52,5 @@ const Component = styled.pre<TextAreaProps>`
   height: ${(props) => props.height};
   flex-shrink: ${(props) => props.flexShrink};
   color: ${(props) => props.color};
+  flex: ${(props) => props.flex};
 `;

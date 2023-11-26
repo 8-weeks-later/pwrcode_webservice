@@ -93,6 +93,7 @@ export const NavbarTitleLink: Story = {
     href: '#',
     fontStyle: 'normal',
     fontWeight: 'bold',
+    fontSize: '1.5625rem',
     margin: '0',
     textDecorationLine: 'none',
     color: 'black',

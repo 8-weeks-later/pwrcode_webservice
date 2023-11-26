@@ -84,3 +84,22 @@ export const SearchLogoAndFormCollection: Story = {
     ),
   },
 };
+
+export const DetailLogoAndFormCollection: Story = {
+  args: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100vmax',
+    height: '20vmax',
+    gap: '5vmax',
+    children: (
+      <>
+        <Logo {...ReactLogo.args} />
+        <DropDown {...SelectDropDown.args} />
+        <Box {...SearchBottomBox.args} />
+      </>
+    ),
+  },
+};
+
