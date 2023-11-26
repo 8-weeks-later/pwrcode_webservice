@@ -6,10 +6,13 @@ import { CardProps } from '../../molecules/Card/Card';
 export interface CardGroupProps {
   children: ReactElement<CardProps>;
   width?: string;
+  height?: string;
   padding?: string;
   overflow?: string;
   animation?: string;
   zIndex?: string;
+  justifyContent?: string;
+  alignItems?: string;
 }
 
 export function CardGroup(props: CardGroupProps) {
@@ -20,6 +23,8 @@ export function CardGroup(props: CardGroupProps) {
       padding={props.padding}
       animation={props.animation}
       zIndex={props.zIndex}
+      justifyContent={props.justifyContent}
+      alignItems={props.alignItems}
     >
       {props.children}
     </Component>
@@ -34,4 +39,7 @@ const Component = styled.div<CardGroupProps>`
   animation: ${(props) => props.animation};
   gap: 10px;
   z-index: ${(props) => props.zIndex};
+  overflow: ${(props) => props.overflow};
+  justify-content: ${(props) => props.justifyContent};
+  align-items: ${(props) => props.alignItems};
 `;

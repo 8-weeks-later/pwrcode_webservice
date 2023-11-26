@@ -49,3 +49,24 @@ export const MainCard: Story = {
     ),
   },
 };
+
+export const SearchCard: Story = {
+  args: {
+    flexShrink: '0',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '75vmax',
+    height: '40vmax',
+    border: '10px solid rgba(176, 166, 149, 0.50)',
+    padding: '1.19rem 1.75rem 3.25rem 1.75rem',
+    background: '#F2F5F7',
+    children: (
+      <>
+        <Text {...ReactText.args} />
+        <TextArea {...MainTextArea.args} />
+        <Link {...MainLink.args} />
+      </>
+    ),
+  },
+};

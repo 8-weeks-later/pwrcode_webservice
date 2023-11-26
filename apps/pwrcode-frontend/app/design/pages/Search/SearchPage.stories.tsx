@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Form } from './Form';
+import { SearchPage } from './SearchPage';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Atoms/Form',
-  component: Form,
+  title: 'Pages/SearchPage',
+  component: SearchPage,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -13,40 +13,17 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
-} satisfies Meta<typeof Form>;
+  argTypes: {
+    // backgroundColor: { control: 'color' },
+  },
+} satisfies Meta<typeof SearchPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const SkillForm: Story = {
-  args: {
-    placeholder: 'Skills',
-    appearance: 'none',
-    background: '#fff',
-    border: '1px solid #c2d1d9',
-    color: 'black',
-  },
-};
-
-export const KeyWordForm: Story = {
-  args: {
-    placeholder: 'type keyword...',
-    appearance: 'none',
-    background: '#fff',
-    border: '1px solid #c2d1d9',
-    color: 'black',
-  },
-};
-
-export const SearchKeyWordForm: Story = {
-  args: {
-    placeholder: 'type keyword...',
-    appearance: 'none',
-    background: '#fff',
-    border: '1px solid #c2d1d9',
-    width: '10vmax',
-    color: 'black',
-  },
-};
+// export const SearchPageStory: Story = {
+//   args: {
+//     children: <MainTemplate {...}/>,
+//   },
+// };

@@ -41,3 +41,18 @@ export const MainDropDown: Story = {
     ],
   },
 };
+
+export const SelectDropDown: Story = {
+  args: {
+    appearance: 'none',
+    background: '#fff',
+    border: '1px solid #c2d1d9',
+    color: 'black',
+    width: '10vmax',
+    data: [
+      { value: 'React', name: 'React' },
+      { value: 'Vue', name: 'Vue' },
+      { value: 'Svelte', name: 'Svelte' },
+    ],
+  },
+};

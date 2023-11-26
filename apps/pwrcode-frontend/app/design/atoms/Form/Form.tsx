@@ -8,6 +8,7 @@ export interface FormProps {
   appearance?: string;
   background?: string;
   color?: string;
+  width?: string;
 }
 
 export function Form(props: FormProps) {

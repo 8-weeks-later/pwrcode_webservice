@@ -5,11 +5,17 @@ import {
   MainBottomBox,
   MainBox,
   MainNavbarBox,
+  SearchBottomBox,
 } from '../../molecules/Box/Box.stories';
 import { Box } from '../../molecules/Box/Box';
 import { Link } from '../../atoms/Link/Link';
 import { DropDown } from '../../molecules/DropDown/DropDown';
-import { MainDropDown } from '../../molecules/DropDown/DropDown.stories';
+import {
+  MainDropDown,
+  SelectDropDown,
+} from '../../molecules/DropDown/DropDown.stories';
+import { Logo } from '../../atoms/Logo/Logo';
+import { ReactLogo } from '../../atoms/Logo/Logo.stories';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -58,5 +64,23 @@ export const MainNavBarCollection: Story = {
     zIndex: '3',
     width: '100vmax',
     children: <Box {...MainNavbarBox.args} />,
+  },
+};
+
+export const SearchLogoAndFormCollection: Story = {
+  args: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '20vmax',
+    gap: '5vmax',
+    children: (
+      <>
+        <Logo {...ReactLogo.args} />
+        <DropDown {...SelectDropDown.args} />
+        <Box {...SearchBottomBox.args} />
+      </>
+    ),
   },
 };

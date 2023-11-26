@@ -3,7 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Box } from './Box';
 import { Text } from '../../atoms/Text/Text';
 import { Form } from '../../atoms/Form/Form';
-import { KeyWordForm, SkillForm } from '../../atoms/Form/Form.stories';
+import {
+  KeyWordForm,
+  SearchKeyWordForm,
+  SkillForm,
+} from '../../atoms/Form/Form.stories';
 import { SubTitle, Title } from '../../atoms/Text/Text.stories';
 import { Link } from '../../atoms/Link/Link';
 import {
@@ -50,7 +54,6 @@ export const MainBottomBox: Story = {
     gap: '10px',
     children: (
       <>
-        {/* <Form {...SkillForm.args} /> */}
         <Form {...KeyWordForm.args} />
       </>
     ),
@@ -74,6 +77,19 @@ export const MainNavbarBox: Story = {
         <Link {...NavbarKnowledgeLink.args} />
         <Link {...NavbarComputerScienceLink.args} />
         <Link {...NavbarCodeBoxLink.args} />
+      </>
+    ),
+  },
+};
+
+export const SearchBottomBox: Story = {
+  args: {
+    flexDirection: 'row',
+    gap: '10px',
+    width: '10vmax',
+    children: (
+      <>
+        <Form {...SearchKeyWordForm.args} />
       </>
     ),
   },

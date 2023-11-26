@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { CardGroup } from './CardGroup';
 import { Card } from '../../molecules/Card/Card';
-import { MainCard } from '../../molecules/Card/Card.stories';
+import { MainCard, SearchCard } from '../../molecules/Card/Card.stories';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -33,6 +33,27 @@ export const MainCardGroup: Story = {
       <>
         <Card {...MainCard.args} />
         <Card {...MainCard.args} />
+      </>
+    ),
+  },
+};
+
+export const SearchCardGroup: Story = {
+  args: {
+    width: '80vmax',
+    height: '100vmax',
+    justifyContent: 'stretch',
+    alignItems: 'center',
+    padding: '6.03vmax 1.158vmax 1.158vmax 1.158vmax',
+    overflow: 'scroll',
+    children: (
+      <>
+        <Card {...SearchCard.args} />
+        <Card {...SearchCard.args} />
+        <Card {...SearchCard.args} />
+        <Card {...SearchCard.args} />
+        <Card {...SearchCard.args} />
+        <Card {...SearchCard.args} />
       </>
     ),
   },
