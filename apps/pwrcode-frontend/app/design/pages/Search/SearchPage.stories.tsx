@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { SearchPage } from './SearchPage';
+import { SearchTemplate } from '../../templates/Search/SearchTemplate';
+import { SearchTemplateStory } from '../../templates/Search/SearchTemplate.stories';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -22,8 +24,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-// export const SearchPageStory: Story = {
-//   args: {
-//     children: <MainTemplate {...}/>,
-//   },
-// };
+export const SearchPageStory: Story = {
+  args: {
+    children: <SearchTemplate {...SearchTemplateStory.args} />,
+  },
+};

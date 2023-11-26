@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Component as MainTemplate } from './SearchTemplate';
 import { Collection } from '../../organisms/Collection/Collection';
 import { LogoGroup } from '../../organisms/LogoGroup/LogoGroup';
 import {

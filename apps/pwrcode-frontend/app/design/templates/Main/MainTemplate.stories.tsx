@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Component as MainTemplate } from './MainTemplate';
+import { MainTemplate } from './MainTemplate';
 import { Collection } from '../../organisms/Collection/Collection';
 import { LogoGroup } from '../../organisms/LogoGroup/LogoGroup';
 import {

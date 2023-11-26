@@ -11,19 +11,19 @@ export interface MainTemplateProps {
   component1?: React.ReactNode;
 }
 
-export function Component(props: MainTemplateProps) {
+export function MainTemplate(props: MainTemplateProps) {
   return (
-    <MainTemplate
+    <Component
       display={props.display}
       height={props.height}
       background={props.background}
     >
       {props.children}
-    </MainTemplate>
+    </Component>
   );
 }
 
-const MainTemplate = styled.div<MainTemplateProps>`
+const Component = styled.div<MainTemplateProps>`
   display: ${(props) => props.display};
   gap: ${(props) => props.gap};
   height: ${(props) => props.height};

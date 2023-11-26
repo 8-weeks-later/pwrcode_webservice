@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { MainPage } from './MainPage';
+import { MainTemplateStory } from '../../templates/Main/MainTemplate.stories';
+import { MainTemplate } from '../../templates/Main/MainTemplate';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -22,8 +24,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-// export const MainPageStory: Story = {
-//   args: {
-//     children: <MainTemplate {...}/>,
-//   },
-// };
+export const MainPageStory: Story = {
+  args: {
+    children: <MainTemplate {...MainTemplateStory.args} />,
+  },
+};

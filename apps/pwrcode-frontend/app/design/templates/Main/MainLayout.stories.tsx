@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Component as MainTemplate } from './MainTemplate';
 import { Collection } from '../../organisms/Collection/Collection';
 import { LogoGroup } from '../../organisms/LogoGroup/LogoGroup';
 import {
@@ -26,7 +25,7 @@ const meta = {
   argTypes: {
     // backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof MainTemplate>;
+} satisfies Meta<typeof MainLayout>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
