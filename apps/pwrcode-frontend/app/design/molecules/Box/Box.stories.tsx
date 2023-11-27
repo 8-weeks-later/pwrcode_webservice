@@ -17,6 +17,8 @@ import {
   NavbarKnowledgeLink,
   NavbarTitleLink,
 } from '../../atoms/Link/Link.stories';
+import { Button } from '../../atoms/Button/Button';
+import { MainFormButton } from '../../atoms/Button/Button.stories';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -51,10 +53,10 @@ export const MainBox: Story = {
 export const MainBottomBox: Story = {
   args: {
     flexDirection: 'row',
-    gap: '10px',
     children: (
       <>
         <Form {...KeyWordForm.args} />
+        <Button {...MainFormButton.args} />
       </>
     ),
   },

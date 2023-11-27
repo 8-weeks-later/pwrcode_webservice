@@ -20,7 +20,7 @@ export interface LinkProps {
 export function Link(props: LinkProps) {
   return (
     <Component
-      href={props.href}
+      href={`${props.href}`}
       afterIcon={props.afterIcon}
       fontFamily={props.fontFamily}
       fontStyle={props.fontStyle}

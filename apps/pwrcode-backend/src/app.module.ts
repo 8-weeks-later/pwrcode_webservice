@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { ArticleModule } from './article/article.module';
 import { Article } from './article/entities/article.entity';
+import { SearchModule } from './modules/search/search.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { Article } from './article/entities/article.entity';
       synchronize: false,
     }),
     ArticleModule,
+    SearchModule,
   ],
   controllers: [AppController],
   providers: [AppService],

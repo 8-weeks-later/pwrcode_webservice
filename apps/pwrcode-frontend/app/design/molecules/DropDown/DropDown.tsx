@@ -20,7 +20,11 @@ interface DropDownProps extends PropsWithChildren {
 export function DropDown(props: DropDownProps) {
   const optionsList: ReactElement[] | undefined = props.data?.map(
     (data: DropDownDataObj) => {
-      return <OptionComponent value={data.value}>{data.name}</OptionComponent>;
+      return (
+        <OptionComponent value={data.value} key={data.value}>
+          {data.name}
+        </OptionComponent>
+      );
     },
   );
 

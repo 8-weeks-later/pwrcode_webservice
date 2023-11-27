@@ -24,7 +24,7 @@ export const MainLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
     text: 'Learn More',
-    href: '#',
+    href: '/',
     afterIcon: '->',
     fontStyle: 'normal',
     fontWeight: '400',
