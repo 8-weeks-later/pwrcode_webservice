@@ -61,8 +61,6 @@ export async function CardGroupSearchDataServerComponent(
   return (
     <>
       {data?.hits?.map((item) => {
-        const search = SearchCardStory?.render;
-
         return (
           <Card {...SearchCardStory.args} data={item}>
             <Text {...ReactText.args} text={item.title} />
