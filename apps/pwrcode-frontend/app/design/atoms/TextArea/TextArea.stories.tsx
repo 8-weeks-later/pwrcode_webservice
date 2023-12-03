@@ -36,3 +36,21 @@ export const MainTextArea: Story = {
     color: '#505D68',
   },
 };
+
+export const SearchTextArea: Story = {
+  args: {
+    fontFamily: 'Ubuntu',
+    text: data,
+    display: 'grid',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    margin: '0.94rem 1rem 0',
+    gap: '1rem',
+    fontSize: '1vmax',
+    flexShrink: '0',
+    flex: '1 1 100%',
+    color: '#505D68',
+    overflow: 'scroll',
+    alignSelf: 'stretch',
+  },
+};

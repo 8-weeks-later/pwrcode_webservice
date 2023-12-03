@@ -2,12 +2,15 @@
 import { FunctionComponent, ReactElement, PropsWithChildren } from 'react';
 import React from 'react';
 import styled from '@emotion/styled';
+import { useHydrateAtoms } from 'jotai/utils';
+import { atom, useAtom } from 'jotai';
+import { articleAtom } from '@/app/state';
 
 export interface CardProps extends PropsWithChildren {
-  children: ReactElement;
-  flexDirection: string;
+  children?: ReactElement[] | ReactElement;
+  flexDirection?: string;
   background?: string;
-  border: string;
+  border?: string;
   width?: string;
   height?: string;
   flexShrink?: string;
@@ -16,9 +19,16 @@ export interface CardProps extends PropsWithChildren {
   justifyContent?: string;
   alignItems?: string;
   zIndex?: string;
+  gridTemplateColumns?: string;
+  display?: string;
+  gap?: string;
+  data?: any;
 }
 
 export function Card(props: CardProps) {
+  // useHydrateAtoms([[articleAtom, props.data]]);
+  // const [item] = useAtom(articleAtom);
+
   return (
     <Component
       width={props.width}
@@ -32,6 +42,10 @@ export function Card(props: CardProps) {
       alignItems={props.alignItems}
       zIndex={props.zIndex}
       background={props.background}
+      gridTemplateColumns={props.gridTemplateColumns}
+      display={props.display}
+      gap={props.gap}
+      data={props.data}
     >
       {props.children}
     </Component>
@@ -39,7 +53,7 @@ export function Card(props: CardProps) {
 }
 
 const Component = styled.div<CardProps>`
-  display: flex;
+  display: ${(props) => props.display};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   flex-shrink: ${(props) => props.flexShrink};
@@ -51,4 +65,6 @@ const Component = styled.div<CardProps>`
   align-items: ${(props) => props.alignItems};
   z-index: ${(props) => props.zIndex};
   background: ${(props) => props.background};
+  grid-template-columns: ${(props) => props.gridTemplateColumns};
+  gap: ${(props) => props.gap};
 `;

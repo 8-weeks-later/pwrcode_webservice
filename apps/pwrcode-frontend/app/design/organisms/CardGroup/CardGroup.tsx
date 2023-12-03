@@ -1,10 +1,16 @@
 'use client';
 import styled from '@emotion/styled';
-import { ReactElement, ReactNode } from 'react';
+import {
+  PropsWithChildren,
+  ReactElement,
+  ReactNode,
+  cloneElement,
+} from 'react';
 import { CardProps } from '../../molecules/Card/Card';
+import { ResponseBodyProps } from './CardGroupDataComponent.server';
 
-export interface CardGroupProps {
-  children: ReactElement<CardProps>;
+export interface CardGroupProps extends PropsWithChildren {
+  children?: ReactElement;
   width?: string;
   height?: string;
   padding?: string;
@@ -13,6 +19,7 @@ export interface CardGroupProps {
   zIndex?: string;
   justifyContent?: string;
   alignItems?: string;
+  data?: ResponseBodyProps;
 }
 
 export function CardGroup(props: CardGroupProps) {

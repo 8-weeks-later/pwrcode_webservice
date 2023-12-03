@@ -4,7 +4,10 @@ import { Card } from './Card';
 import { Link } from '../../atoms/Link/Link';
 import { Text } from '../../atoms/Text/Text';
 import { TextArea } from '../../atoms/TextArea/TextArea';
-import { MainTextArea } from '../../atoms/TextArea/TextArea.stories';
+import {
+  MainTextArea,
+  SearchTextArea,
+} from '../../atoms/TextArea/TextArea.stories';
 import { ReactText } from '../../atoms/Text/Text.stories';
 import { MainLink } from '../../atoms/Link/Link.stories';
 
@@ -50,24 +53,38 @@ export const MainCard: Story = {
   },
 };
 
-export const SearchCard: Story = {
+// const SearchCardTemplate: Story = {
+//   render: ({ data, ...args }) => {
+//     return (
+//       // <Card {...SearchCard.args} data={data} />
+//       <Card>
+//           <Text {...ReactText.args} text={data.title} />
+//           <TextArea {...SearchTextArea.args} text={data.content} />
+//           <Link {...MainLink.args} href={data.link} />
+//       </Card>
+//     );
+//   },
+// };
+
+export const SearchCardStory: Story = {
   args: {
+    display: 'flex',
     flexShrink: '0',
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '75vmax',
     height: '40vmax',
+    gap: '10px',
     border: '10px solid rgba(176, 166, 149, 0.50)',
-    padding: '1.19rem 1.75rem 3.25rem 1.75rem',
+    // padding: '1.19rem 0 3.25rem 0',
     background: '#F2F5F7',
-    children: (
-      <>
-        <Text {...ReactText.args} />
-        <TextArea {...MainTextArea.args} />
-        <Link {...MainLink.args} />
-      </>
-    ),
+    data: '',
+    // children: ((data: any) => (
+    //   <>
+
+    //   </>
+    // ))(args.data),
   },
 };
 

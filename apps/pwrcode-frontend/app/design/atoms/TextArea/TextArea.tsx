@@ -2,21 +2,28 @@
 
 import styled from '@emotion/styled';
 import React from 'react';
-
+import remarkGfm from 'remark-gfm';
+import Markdown from 'react-markdown';
 export interface TextAreaProps {
   fontFamily: string;
   text?: string;
   fontStyle: string;
   fontWeight: string;
-  margin: string;
+  margin?: string;
   fontSize: string;
-  lineHeight: string;
-  textAlign: string;
+  lineHeight?: string;
+  textAlign?: string;
   width?: string;
   height?: string;
   flexShrink?: string;
   color?: string;
   flex?: string;
+  display?: string;
+  overflow?: string;
+  alignSelf?: string;
+  gridTemplateColumns?: string;
+  gap?: string;
+  gridAutoFlow?: string;
 }
 
 export function TextArea(props: TextAreaProps) {
@@ -34,8 +41,14 @@ export function TextArea(props: TextAreaProps) {
       flexShrink={props.flexShrink}
       color={props.color}
       flex={props.flex}
+      display={props.display}
+      overflow={props.overflow}
+      alignSelf={props.alignSelf}
+      gridTemplateColumns={props.gridTemplateColumns}
+      gap={props.gap}
+      gridAutoFlow={props.gridAutoFlow}
     >
-      {props.text}
+      <Markdown remarkPlugins={[remarkGfm]}>{props.text}</Markdown>
     </Component>
   );
 }
@@ -53,4 +66,10 @@ const Component = styled.pre<TextAreaProps>`
   flex-shrink: ${(props) => props.flexShrink};
   color: ${(props) => props.color};
   flex: ${(props) => props.flex};
+  display: ${(props) => props.display};
+  overflow: ${(props) => props.overflow};
+  align-self: ${(props) => props.alignSelf};
+  grid-template-columns: ${(props) => props.gridTemplateColumns};
+  gap: ${(props) => props.gap};
+  grid-auto-flow: ${props => props.gridAutoFlow};
 `;

@@ -3,9 +3,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CardGroup } from './CardGroup';
 import { Card } from '../../molecules/Card/Card';
 import {
+  CardGroupDataServerComponent,
+  CardGroupSearchDataServerComponent,
+} from './CardGroupDataComponent.server';
+import {
   DetailCard,
   MainCard,
-  SearchCard,
+  // SearchCard,
 } from '../../molecules/Card/Card.stories';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -50,16 +54,7 @@ export const SearchCardGroup: Story = {
     alignItems: 'center',
     padding: '6.03vmax 1.158vmax 1.158vmax 1.158vmax',
     overflow: 'scroll',
-    children: (
-      <>
-        <Card {...SearchCard.args} />
-        <Card {...SearchCard.args} />
-        <Card {...SearchCard.args} />
-        <Card {...SearchCard.args} />
-        <Card {...SearchCard.args} />
-        <Card {...SearchCard.args} />
-      </>
-    ),
+    children: <CardGroupSearchDataServerComponent />,
   },
 };
 
