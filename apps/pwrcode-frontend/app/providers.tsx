@@ -1,33 +1,34 @@
-// app/providers.tsx
-'use client'
+// Provider.tsx
 
-import { CacheProvider } from '@chakra-ui/next-js'
-import { ChakraProvider } from '@chakra-ui/react'
+'use client';
 
-// 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react'
+import React from 'react';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-// 2. Extend the theme to include custom colors, fonts, etc
-const colors = {
-  brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
-  },
-}
+type Props = {
+  children: React.ReactNode;
+};
 
-export const theme = extendTheme({ colors })
+function Providers({ children }: Props) {
+  const [client] = React.useState(
+    new QueryClient({
+      defaultOptions: {
+        // react-query 전역 설정
+        queries: {
+          refetchOnWindowFocus: false,
+          retry: false,
+        },
+      },
+    }),
+  );
 
-export function Providers({ 
-    children 
-  }: { 
-  children: React.ReactNode 
-  }) {
   return (
-    <CacheProvider>
-      <ChakraProvider theme={theme}>
-        {children}
-      </ChakraProvider>
-    </CacheProvider>
-  )
+    <QueryClientProvider client={client}>
+      {children}
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  );
 }
+
+export default Providers;

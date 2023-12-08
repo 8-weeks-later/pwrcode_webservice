@@ -11,7 +11,7 @@ import { CardGroup } from '../../organisms/CardGroup/CardGroup';
 import { MainLogoGroup } from '../../organisms/LogoGroup/LogoGroup.stories';
 import {
   MainCardGroup,
-  SearchCardGroup,
+  SearchCardGroupStory,
 } from '../../organisms/CardGroup/CardGroup.stories';
 import { SearchLayout } from './SearchLayout';
 import { CardGroupDataServerComponent } from '../../organisms/CardGroup/CardGroupDataComponent.server';
@@ -47,7 +47,7 @@ export const SearchLayoutStory: Story = {
     children: (
       <>
         <Collection {...SearchLogoAndFormCollection.args} />
-        <CardGroup {...SearchCardGroup.args} />
+        <CardGroup {...SearchCardGroupStory.args} />
       </>
     ),
   },

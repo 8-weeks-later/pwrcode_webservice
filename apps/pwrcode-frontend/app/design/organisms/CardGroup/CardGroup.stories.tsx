@@ -4,6 +4,7 @@ import { CardGroup } from './CardGroup';
 import { Card } from '../../molecules/Card/Card';
 import {
   CardGroupDataServerComponent,
+  CardGroupMainDataServerComponent,
   CardGroupSearchDataServerComponent,
 } from './CardGroupDataComponent.server';
 import {
@@ -39,17 +40,15 @@ export const MainCardGroup: Story = {
     padding: '1.17rem',
     children: (
       <>
-        <Card {...MainCard.args} />
-        <Card {...MainCard.args} />
+        <CardGroupMainDataServerComponent />
       </>
     ),
   },
 };
 
-export const SearchCardGroup: Story = {
+export const SearchCardGroupStory: Story = {
   args: {
     width: '80vmax',
-    height: '100vmax',
     justifyContent: 'stretch',
     alignItems: 'center',
     padding: '6.03vmax 1.158vmax 1.158vmax 1.158vmax',

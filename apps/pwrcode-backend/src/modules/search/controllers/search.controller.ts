@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { SearchService } from '../search.service';
 import { SearchArticleDto } from '../dto/search-article.dto';
-import { data } from './documents/data';
+import { mappingData } from './documents/common/interface';
 
 @ApiTags('Search')
 @Controller('search')
@@ -11,7 +11,7 @@ export class SearchController {
 
   @Get('/')
   public async getSearch(): Promise<void> {
-    const resp = await this.searchService.addDocuments(data);
+    const resp = await this.searchService.addDocuments(mappingData);
 
     console.log(resp);
   }

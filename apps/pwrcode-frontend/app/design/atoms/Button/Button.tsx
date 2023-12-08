@@ -3,6 +3,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { useAtom } from 'jotai';
+import { searchKeywordAtom } from '@/app/state';
 
 export interface ButtonProps {
   fontFamily?: string;
@@ -22,6 +24,25 @@ export function Button(props: ButtonProps) {
 
   return (
     <Component onClick={() => router.push(`/${props.path}`)} {...props}>
+      {props.text}
+    </Component>
+  );
+}
+
+export function SearchButton(props: ButtonProps) {
+  const router = useRouter();
+
+  // const [keyword, setKeyword] = useAtom(searchKeywordAtom);
+
+  return (
+    <Component
+      onClick={() => {
+        // setKeyword({ keyword: e.target.value });
+
+        router.push(`/${props.path}`);
+      }}
+      {...props}
+    >
       {props.text}
     </Component>
   );

@@ -1,9 +1,9 @@
 'use client';
 
 import styled from '@emotion/styled';
-import React from 'react';
-import remarkGfm from 'remark-gfm';
 import Markdown from 'react-markdown';
+import React from 'react';
+
 export interface TextAreaProps {
   fontFamily: string;
   text?: string;
@@ -48,12 +48,12 @@ export function TextArea(props: TextAreaProps) {
       gap={props.gap}
       gridAutoFlow={props.gridAutoFlow}
     >
-      <Markdown remarkPlugins={[remarkGfm]}>{props.text}</Markdown>
+      <Markdown>{props.text}</Markdown>
     </Component>
   );
 }
 
-const Component = styled.pre<TextAreaProps>`
+const Component = styled.div<TextAreaProps>`
   font-family: ${(props) => props.fontFamily};
   font-style: ${(props) => props.fontStyle};
   font-weight: ${(props) => props.fontWeight};
@@ -71,5 +71,5 @@ const Component = styled.pre<TextAreaProps>`
   align-self: ${(props) => props.alignSelf};
   grid-template-columns: ${(props) => props.gridTemplateColumns};
   gap: ${(props) => props.gap};
-  grid-auto-flow: ${props => props.gridAutoFlow};
+  grid-auto-flow: ${(props) => props.gridAutoFlow};
 `;

@@ -2,9 +2,6 @@
 import { FunctionComponent, ReactElement, PropsWithChildren } from 'react';
 import React from 'react';
 import styled from '@emotion/styled';
-import { useHydrateAtoms } from 'jotai/utils';
-import { atom, useAtom } from 'jotai';
-import { articleAtom } from '@/app/state';
 
 export interface CardProps extends PropsWithChildren {
   children?: ReactElement[] | ReactElement;
@@ -26,8 +23,6 @@ export interface CardProps extends PropsWithChildren {
 }
 
 export function Card(props: CardProps) {
-  // useHydrateAtoms([[articleAtom, props.data]]);
-  // const [item] = useAtom(articleAtom);
 
   return (
     <Component

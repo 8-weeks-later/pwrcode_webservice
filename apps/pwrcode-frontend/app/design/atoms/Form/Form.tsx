@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 import styled from '@emotion/styled';
+import { searchKeywordAtom, testAtom } from '@/app/state';
+import { useAtom } from 'jotai';
 
 export interface FormProps {
   placeholder: string;
@@ -14,6 +16,20 @@ export interface FormProps {
 export function Form(props: FormProps) {
   return <Component {...props} />;
 }
+
+export function SearchForm(props: FormProps) {
+  const [keyword, setKeyword] = useAtom(searchKeywordAtom);
+
+  return (
+    <Component
+      {...props}
+      onChange={(e) => {
+        setKeyword({ keyword: e.target.value });
+      }}
+    />
+  );
+}
+
 const Component = styled.input<FormProps>`
   width: ${(props) => props.width};
   appearance: ${(props) => props.appearance};

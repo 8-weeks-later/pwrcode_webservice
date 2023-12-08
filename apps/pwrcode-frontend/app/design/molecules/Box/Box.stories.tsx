@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Box } from './Box';
 import { Text } from '../../atoms/Text/Text';
-import { Form } from '../../atoms/Form/Form';
+import { Form, SearchForm } from '../../atoms/Form/Form';
 import {
   KeyWordForm,
   SearchKeyWordForm,
@@ -55,7 +55,7 @@ export const MainBottomBox: Story = {
     flexDirection: 'row',
     children: (
       <>
-        <Form {...KeyWordForm.args} />
+        <SearchForm {...KeyWordForm.args} />
         <Button {...MainFormButton.args} />
       </>
     ),
@@ -91,7 +91,7 @@ export const SearchBottomBox: Story = {
     width: '10vmax',
     children: (
       <>
-        <Form {...SearchKeyWordForm.args} />
+        <SearchForm {...SearchKeyWordForm.args} />
       </>
     ),
   },

@@ -7,7 +7,12 @@ import {
   cloneElement,
 } from 'react';
 import { CardProps } from '../../molecules/Card/Card';
-import { ResponseBodyProps } from './CardGroupDataComponent.server';
+import {
+  CardGroupSearchDataServerComponent,
+  ResponseBodyProps,
+} from './CardGroupDataComponent.server';
+import { useAtomValue } from 'jotai';
+import { searchKeywordAtom } from '@/app/state';
 
 export interface CardGroupProps extends PropsWithChildren {
   children?: ReactElement;
@@ -38,6 +43,7 @@ export function CardGroup(props: CardGroupProps) {
     </Component>
   );
 }
+
 
 const Component = styled.div<CardGroupProps>`
   display: flex;
