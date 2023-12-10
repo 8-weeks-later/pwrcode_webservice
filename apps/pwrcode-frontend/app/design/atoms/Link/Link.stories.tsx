@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Link } from './Link';
+import { CustomLink as Link } from './Link';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -34,11 +34,11 @@ export const MainLink: Story = {
   },
 };
 
-export const NavbarHomeLink: Story = {
+export const NavbarSearchLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
-    text: 'Home'.toUpperCase(),
-    href: '#',
+    text: 'Search'.toUpperCase(),
+    href: 'search',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '0.75rem',
@@ -51,7 +51,7 @@ export const NavbarKnowledgeLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
     text: 'Knowledge'.toUpperCase(),
-    href: '#',
+    href: 'knowledge',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '0.75rem',
@@ -64,7 +64,7 @@ export const NavbarComputerScienceLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
     text: 'Computer Science'.toUpperCase(),
-    href: '#',
+    href: 'computer_science',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '0.75rem',
@@ -77,7 +77,7 @@ export const NavbarCodeBoxLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
     text: 'CodeBox'.toUpperCase(),
-    href: '#',
+    href: 'codebox',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '0.75rem',
@@ -90,7 +90,7 @@ export const NavbarTitleLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
     text: 'PwrCode',
-    href: '#',
+    href: '/',
     fontStyle: 'normal',
     fontWeight: 'bold',
     fontSize: '1.5625rem',

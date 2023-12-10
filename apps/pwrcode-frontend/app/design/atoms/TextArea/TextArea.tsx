@@ -72,4 +72,8 @@ const Component = styled.div<TextAreaProps>`
   grid-template-columns: ${(props) => props.gridTemplateColumns};
   gap: ${(props) => props.gap};
   grid-auto-flow: ${(props) => props.gridAutoFlow};
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;

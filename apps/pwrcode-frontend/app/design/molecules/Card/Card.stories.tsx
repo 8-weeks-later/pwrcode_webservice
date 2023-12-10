@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Card } from './Card';
-import { Link } from '../../atoms/Link/Link';
+import { CustomLink } from '../../atoms/Link/Link';
 import { Text } from '../../atoms/Text/Text';
 import { TextArea } from '../../atoms/TextArea/TextArea';
 import {
@@ -48,7 +48,7 @@ export const MainCard: Story = {
       <>
         <Text {...ReactText.args} />
         <TextArea {...MainTextArea.args} />
-        <Link {...MainLink.args} />
+        <CustomLink {...MainLink.args} />
       </>
     ),
   },
@@ -105,7 +105,7 @@ export const DetailCard: Story = {
         <Text {...ReactText.args} />
         <TextArea {...MainTextArea.args} />
         <TextArea {...MainTextArea.args} />
-        <Link {...MainLink.args} />
+        <CustomLink {...MainLink.args} />
       </>
     ),
   },
@@ -126,7 +126,7 @@ export const DetailErrorCard: Story = {
       <>
         <Text {...ReactText.args} />
         <TextArea {...MainTextArea.args} />
-        <Link {...MainLink.args} />
+        <CustomLink {...MainLink.args} />
       </>
     ),
   },

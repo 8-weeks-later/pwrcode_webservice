@@ -9,11 +9,11 @@ import {
   SkillForm,
 } from '../../atoms/Form/Form.stories';
 import { SubTitle, Title } from '../../atoms/Text/Text.stories';
-import { Link } from '../../atoms/Link/Link';
+import { CustomLink } from '../../atoms/Link/Link';
 import {
   NavbarCodeBoxLink,
   NavbarComputerScienceLink,
-  NavbarHomeLink,
+  NavbarSearchLink,
   NavbarKnowledgeLink,
   NavbarTitleLink,
 } from '../../atoms/Link/Link.stories';
@@ -74,11 +74,11 @@ export const MainNavbarBox: Story = {
     background: '#B0A695',
     children: (
       <>
-        <Link {...NavbarTitleLink.args} />
-        <Link {...NavbarHomeLink.args} />
-        <Link {...NavbarKnowledgeLink.args} />
-        <Link {...NavbarComputerScienceLink.args} />
-        <Link {...NavbarCodeBoxLink.args} />
+        <CustomLink {...NavbarTitleLink.args} />
+        <CustomLink {...NavbarSearchLink.args} />
+        <CustomLink {...NavbarKnowledgeLink.args} />
+        <CustomLink {...NavbarComputerScienceLink.args} />
+        <CustomLink {...NavbarCodeBoxLink.args} />
       </>
     ),
   },

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Delete } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { SearchService } from '../search.service';
 import { SearchArticleDto } from '../dto/search-article.dto';
@@ -21,5 +21,12 @@ export class SearchController {
     return await this.searchService.search(search.text, {
       attributesToRetrieve: ['*'],
     });
+  }
+
+  @Delete('/')
+  public async deleteSearch(): Promise<void> {
+    const resp = await this.searchService.deleteAllDocuments();
+
+    console.log(resp);
   }
 }

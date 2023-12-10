@@ -2,7 +2,7 @@
 
 import { PropsWithChildren } from 'react';
 import { Text } from '../../atoms/Text/Text';
-import { Link } from '../../atoms/Link/Link';
+import { CustomLink } from '../../atoms/Link/Link';
 
 import { TextArea } from '../../atoms/TextArea/TextArea';
 import {
@@ -81,6 +81,16 @@ export function CardGroupDataServerComponent(
     throw new Error('Failed to fetch');
   }
 
+  if (data?.hits?.length === 0) {
+    return (
+      <>
+        <Card {...MainCard.args}>
+          <Text {...ReactText.args} text={'NO DATA'} />
+        </Card>
+      </>
+    );
+  }
+
   return (
     <>
       {data?.hits?.map((item) => {
@@ -88,7 +98,7 @@ export function CardGroupDataServerComponent(
           <Card {...MainCard.args} data={item}>
             <Text {...ReactText.args} text={item.title} />
             <TextArea {...SearchTextArea.args} text={item.content} />
-            <Link {...MainLink.args} href={item.link} />
+            <CustomLink {...MainLink.args} href={item.link} />
           </Card>
         );
       })}
@@ -121,7 +131,7 @@ export function CardGroupMainDataServerComponent(
           <Card {...MainCard.args} data={item}>
             <Text {...ReactText.args} text={item.title} />
             <TextArea {...SearchTextArea.args} text={item.content} />
-            <Link {...MainLink.args} href={item.link} />
+            <CustomLink {...MainLink.args} href={item.link} />
           </Card>
         );
       })}
@@ -136,7 +146,15 @@ export function CardGroupSearchDataServerComponent(
 ) {
   const [data] = useAtom(testAtom);
 
-  console.log(data);
+  if (data?.hits?.length === 0) {
+    return (
+      <>
+        <Card {...SearchCardStory.args}>
+          <Text {...ReactText.args} text={'NO DATA'} />
+        </Card>
+      </>
+    );
+  }
 
   return (
     <>
@@ -149,7 +167,7 @@ export function CardGroupSearchDataServerComponent(
               text={item.content}
               key={index}
             />
-            <Link {...MainLink.args} href={item.link} key={index} />
+            <CustomLink {...MainLink.args} href={item.link} key={index} />
           </Card>
         );
       })}

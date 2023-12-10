@@ -51,7 +51,7 @@ export const SearchCardGroupStory: Story = {
     width: '80vmax',
     justifyContent: 'stretch',
     alignItems: 'center',
-    padding: '6.03vmax 1.158vmax 1.158vmax 1.158vmax',
+    padding: '6.03vmax 1.158vmax 10px 1.158vmax',
     overflow: 'scroll',
     children: <CardGroupSearchDataServerComponent />,
   },

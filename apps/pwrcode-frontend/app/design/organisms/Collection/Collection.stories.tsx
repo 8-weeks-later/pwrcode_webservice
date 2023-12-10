@@ -8,7 +8,7 @@ import {
   SearchBottomBox,
 } from '../../molecules/Box/Box.stories';
 import { Box } from '../../molecules/Box/Box';
-import { Link } from '../../atoms/Link/Link';
+// import { Link } from '../../atoms/Link/Link';
 import { DropDown } from '../../molecules/DropDown/DropDown';
 import {
   MainDropDown,
@@ -40,9 +40,9 @@ type Story = StoryObj<typeof meta>;
 export const MainCollection: Story = {
   args: {
     display: 'grid',
-    justifyContent: 'center',
+    justifyContent: 'stretch',
     alignContent: 'center',
-    gridTemplateColumns: 'repeat(auto-fill,1fr)',
+    // gridTemplateColumns: 'repeat(auto-fill,1fr)',
     flexDirection: 'column',
     width: '45vmax',
     gap: '2vmax',
@@ -102,4 +102,3 @@ export const DetailLogoAndFormCollection: Story = {
     ),
   },
 };
-

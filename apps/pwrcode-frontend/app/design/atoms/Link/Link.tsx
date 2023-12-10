@@ -2,9 +2,12 @@
 
 import styled from '@emotion/styled';
 import React from 'react';
+import Link from 'next/link';
+import { Theme } from '@emotion/react';
+import { useRouter } from 'next/navigation';
 
 export interface LinkProps {
-  href: string;
+  href?: string;
   text?: string;
   afterIcon?: string;
   fontFamily?: string;
@@ -17,10 +20,9 @@ export interface LinkProps {
   color?: string;
 }
 
-export function Link(props: LinkProps) {
+export function CustomLink(props: LinkProps) {
   return (
     <Component
-      href={`${props.href}`}
       afterIcon={props.afterIcon}
       fontFamily={props.fontFamily}
       fontStyle={props.fontStyle}
@@ -31,12 +33,12 @@ export function Link(props: LinkProps) {
       textDecorationLine={props.textDecorationLine}
       color={props.color}
     >
-      {props.text}
+      <Link href={`/${props.href}`}>{props.text}</Link>
     </Component>
   );
 }
 
-const Component = styled.a<LinkProps>`
+const Component = styled.div<LinkProps>`
   font-family: ${(props) => props.fontFamily};
   font-style: ${(props) => props.fontStyle};
   font-weight: ${(props) => props.fontWeight};

@@ -24,4 +24,9 @@ export class SearchService {
     const index = this.getArticleIndex();
     return await index.search(text, searchParams);
   }
+
+  public async deleteAllDocuments() {
+    const index = this.getArticleIndex();
+    return await index.deleteAllDocuments();
+  }
 }

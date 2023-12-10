@@ -44,7 +44,6 @@ export function CardGroup(props: CardGroupProps) {
   );
 }
 
-
 const Component = styled.div<CardGroupProps>`
   display: flex;
   width: ${(props) => props.width};
@@ -57,4 +56,8 @@ const Component = styled.div<CardGroupProps>`
   overflow: ${(props) => props.overflow};
   justify-content: ${(props) => props.justifyContent};
   align-items: ${(props) => props.alignItems};
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
