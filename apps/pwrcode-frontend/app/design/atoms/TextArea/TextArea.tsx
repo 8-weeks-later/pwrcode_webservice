@@ -3,6 +3,9 @@
 import styled from '@emotion/styled';
 import Markdown from 'react-markdown';
 import React from 'react';
+import remarkMdx from 'remark-mdx';
+import remarkBreaks from 'remark-breaks';
+import Image from 'next/image';
 
 export interface TextAreaProps {
   fontFamily: string;
@@ -48,7 +51,20 @@ export function TextArea(props: TextAreaProps) {
       gap={props.gap}
       gridAutoFlow={props.gridAutoFlow}
     >
-      <Markdown>{props.text}</Markdown>
+      <Markdown
+        components={{
+          img(props) {
+            const { src, ...rest } = props;
+            return <img 
+              src={src}
+              width={'100vw'}
+            {...rest} />;
+          },
+        }}
+        remarkPlugins={[remarkMdx, remarkBreaks]}
+      >
+        {props.text}
+      </Markdown>
     </Component>
   );
 }

@@ -18,7 +18,7 @@ export const hooks: DataProps = {
     
     - "useReducer" : 리듀서 함수 내부의 업데이트 논리를 사용해 상태 변수를 선언
     
-    2. 
+    ![TEST](http://127.0.0.1:9000/computer-science/IMG_5632.jpg)
     
     `,
 };

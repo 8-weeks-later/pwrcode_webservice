@@ -7,15 +7,14 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class ArticleService {
-
   constructor(
     @InjectRepository(Article)
     private articleRepository: Repository<Article>,
-  ){}
-
+  ) {}
 
   create(createArticleDto: CreateArticleDto) {
-    return 'This action adds a new article';
+    return this.articleRepository.create(createArticleDto);
+    // return 'This action adds a new article';
   }
 
   findAll() {

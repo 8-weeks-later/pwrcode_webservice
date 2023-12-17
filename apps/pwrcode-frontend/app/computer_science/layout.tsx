@@ -6,6 +6,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         color: 'black',
         background: 'white',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
       }}
