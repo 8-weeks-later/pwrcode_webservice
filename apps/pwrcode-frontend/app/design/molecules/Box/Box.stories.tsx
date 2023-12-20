@@ -19,6 +19,8 @@ import {
 } from '../../atoms/Link/Link.stories';
 import { Button } from '../../atoms/Button/Button';
 import { MainFormButton } from '../../atoms/Button/Button.stories';
+import { DropDown } from '../DropDown/DropDown';
+import { MainDropDown } from '../DropDown/DropDown.stories';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -50,13 +52,27 @@ export const MainBox: Story = {
   },
 };
 
-export const MainBottomBox: Story = {
+export const MainBottomSearchBox: Story = {
   args: {
     flexDirection: 'row',
     children: (
       <>
         <SearchForm {...KeyWordForm.args} />
         <Button {...MainFormButton.args} />
+      </>
+    ),
+  },
+};
+
+export const MainBottomBox: Story = {
+  args: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: '10px',
+    children: (
+      <>
+        <DropDown {...MainDropDown.args} />
+        <Box {...MainBottomSearchBox.args} />
       </>
     ),
   },

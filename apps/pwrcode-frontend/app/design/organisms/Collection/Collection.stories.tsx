@@ -39,18 +39,16 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const MainCollection: Story = {
   args: {
-    display: 'grid',
-    justifyContent: 'stretch',
+    display: 'flex',
+    justifyContent: 'center',
     alignContent: 'center',
-    // gridTemplateColumns: 'repeat(auto-fill,1fr)',
     flexDirection: 'column',
     width: '45vmax',
-    gap: '2vmax',
+    gap: '3vmax',
     component: 'MainCollection',
     children: (
       <>
         <Box {...MainBox.args} />
-        <DropDown {...MainDropDown.args} />
         <Box {...MainBottomBox.args} />
       </>
     ),
@@ -61,6 +59,16 @@ export const MainNavBarCollection: Story = {
   args: {
     flexDirection: 'column',
     position: 'fixed',
+    zIndex: '3',
+    width: '100vmax',
+    children: <Box {...MainNavbarBox.args} />,
+  },
+};
+
+export const ComputerScienceNavBarCollection: Story = {
+  args: {
+    flexDirection: 'column',
+    position: '',
     zIndex: '3',
     width: '100vmax',
     children: <Box {...MainNavbarBox.args} />,

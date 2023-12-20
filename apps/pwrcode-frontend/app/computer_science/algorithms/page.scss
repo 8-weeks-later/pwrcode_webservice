@@ -1,0 +1,60 @@
+$mdx-box-gap: 10px;
+
+.MDX_ROOT {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background: white;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.MDX_BOX {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $mdx-box-gap;
+  padding: $mdx-box-gap;
+  flex: 1;
+  transform: rotate(0turn);
+  cursor: pointer;
+}
+
+.MDX_BOX_MATH,
+.MDX_BOX_ALGO,
+.MDX_BOX_ARCH,
+.MDX_BOX_DATABASE,
+.MDX_BOX_LANG,
+.MDX_BOX_NOTES {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  & img {
+    width: 10vmax;
+    height: 10vmax;
+    object-fit: cover;
+  }
+
+  border: 1px solid black;
+  background: #6d6db6;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #6d6db6;
+
+  &:hover {
+    border: 1px solid blue;
+    filter: invert(1);
+  }
+}
+
+.MDX_BOX_TEXT {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: 'Ubuntu';
+}

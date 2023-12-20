@@ -37,7 +37,8 @@
     "remark-breaks": "^4.0.0",
     "remark-gfm": "3.0.1",
     "remark-lint": "^9.1.2",
-    "remark-mdx": "^3.0.0"
+    "remark-mdx": "^3.0.0",
+    "sass": "^1.69.5"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.3",

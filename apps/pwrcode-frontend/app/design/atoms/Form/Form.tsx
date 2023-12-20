@@ -23,6 +23,7 @@ export function SearchForm(props: FormProps) {
   return (
     <Component
       {...props}
+      value={keyword.keyword}
       onChange={(e) => {
         setKeyword({ keyword: e.target.value });
       }}
