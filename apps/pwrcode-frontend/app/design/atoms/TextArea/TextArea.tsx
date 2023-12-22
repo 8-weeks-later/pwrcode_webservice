@@ -5,7 +5,7 @@ import Markdown from 'react-markdown';
 import React from 'react';
 import remarkMdx from 'remark-mdx';
 import remarkBreaks from 'remark-breaks';
-import Image from 'next/image';
+import Editor from '@monaco-editor/react';
 
 export interface TextAreaProps {
   fontFamily: string;
@@ -55,10 +55,11 @@ export function TextArea(props: TextAreaProps) {
         components={{
           img(props) {
             const { src, ...rest } = props;
-            return <img 
-              src={src}
-              width={'100vw'}
-            {...rest} />;
+            return <img src={src} width={'100vw'} {...rest} />;
+          },
+          code(props) {
+            const { children, className, node, ...rest } = props;
+            return <Editor defaultValue={String(children)} />;
           },
         }}
         remarkPlugins={[remarkMdx, remarkBreaks]}

@@ -16,7 +16,7 @@ import {
 } from '../../molecules/DropDown/DropDown.stories';
 import { Logo } from '../../atoms/Logo/Logo';
 import { ReactLogo } from '../../atoms/Logo/Logo.stories';
-
+import { SearchCollection } from './Collection';
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
   title: 'Organisms/Collection',
@@ -77,18 +77,16 @@ export const ComputerScienceNavBarCollection: Story = {
 
 export const SearchLogoAndFormCollection: Story = {
   args: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '20vmax',
-    gap: '5vmax',
     children: (
-      <>
-        <Logo {...ReactLogo.args} />
-        <DropDown {...SelectDropDown.args} />
-        <Box {...SearchBottomBox.args} />
-      </>
+      <SearchCollection
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        width="20vmax"
+        height="100vmin"
+        gap="5vmax"
+      />
     ),
   },
 };

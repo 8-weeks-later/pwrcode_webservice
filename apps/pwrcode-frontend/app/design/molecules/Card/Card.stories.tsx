@@ -39,10 +39,10 @@ export const MainCard: Story = {
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '30vmax',
-    height: '50vmax',
+    height: '50vmin',
     border: '10px solid rgba(176, 166, 149, 0.50)',
-    padding: '1.19rem 1.75rem 3.25rem 1.75rem',
-    animation: '15s linear 1s infinite running slideintest',
+    // padding: '1.19rem 1.75rem 3.25rem 1.75rem',
+    // animation: '15s linear 1s infinite running slideintest',
     background: '#F2F5F7',
     children: (
       <>
@@ -75,8 +75,7 @@ export const SearchCardStory: Story = {
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '75vmax',
-    height: '50vmax',
-    gap: '10px',
+    height: '85vmin',
     border: '10px solid rgba(176, 166, 149, 0.50)',
     // padding: '1.19rem 0 3.25rem 0',
     background: '#F2F5F7',

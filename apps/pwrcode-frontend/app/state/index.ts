@@ -4,10 +4,12 @@ import { ResponseBodyProps } from '../design/organisms/CardGroup/CardGroupDataCo
 import { QueryKey } from '@tanstack/react-query';
 
 export interface SearchKeywordProps {
+  skill: string;
   keyword: string;
 }
 
 export const searchKeywordAtom = atom<SearchKeywordProps>({
+  skill: 'React',
   keyword: '',
 });
 

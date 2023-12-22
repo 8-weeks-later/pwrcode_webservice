@@ -4,7 +4,7 @@ import { IsNotEmpty, Length } from 'class-validator';
 export class SearchArticleDto {
   @ApiProperty({
     description: '???',
-    example: 'TEst',
+    example: '내장',
   })
   @IsNotEmpty()
   @Length(2, 255)

@@ -25,6 +25,7 @@ export interface CardGroupProps extends PropsWithChildren {
   justifyContent?: string;
   alignItems?: string;
   data?: ResponseBodyProps;
+  gap?: string;
 }
 
 export function CardGroup(props: CardGroupProps) {
@@ -38,6 +39,7 @@ export function CardGroup(props: CardGroupProps) {
       zIndex={props.zIndex}
       justifyContent={props.justifyContent}
       alignItems={props.alignItems}
+      gap={props.gap}
     >
       {props.children}
     </Component>
@@ -49,9 +51,9 @@ const Component = styled.div<CardGroupProps>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   flex-direction: column;
+  gap: ${(props) => props.gap};
   padding: ${(props) => props.padding};
   animation: ${(props) => props.animation};
-  gap: 10px;
   z-index: ${(props) => props.zIndex};
   overflow: ${(props) => props.overflow};
   justify-content: ${(props) => props.justifyContent};

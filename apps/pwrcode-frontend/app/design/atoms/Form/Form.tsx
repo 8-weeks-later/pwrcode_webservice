@@ -7,6 +7,8 @@ import { useAtom } from 'jotai';
 export interface FormProps {
   placeholder: string;
   border?: string;
+  fontFamily?: string;
+  borderRadius?: string;
   appearance?: string;
   background?: string;
   color?: string;
@@ -25,7 +27,7 @@ export function SearchForm(props: FormProps) {
       {...props}
       value={keyword.keyword}
       onChange={(e) => {
-        setKeyword({ keyword: e.target.value });
+        setKeyword({ ...keyword, keyword: e.target.value });
       }}
     />
   );
@@ -37,6 +39,8 @@ const Component = styled.input<FormProps>`
   background: ${(props) => props.background};
   border: ${(props) => props.border};
   color: ${(props) => props.color};
+  border-radius: ${(props) => props.borderRadius};
+  font-family: ${(props) => props.fontFamily};
   padding: 10px 20px;
   &::placeholder {
     color: #c2d1d9;

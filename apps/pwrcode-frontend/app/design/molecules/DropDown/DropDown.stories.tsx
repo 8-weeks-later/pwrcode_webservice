@@ -32,7 +32,9 @@ export const MainDropDown: Story = {
   args: {
     appearance: 'none',
     background: '#fff',
-    border: '1px solid #c2d1d9',
+    border: '3px solid #c2d1d9',
+    borderRadius: '10px',
+    fontFamily: 'Ubuntu',
     color: 'black',
     data: [
       { value: 'React', name: 'React' },
@@ -46,9 +48,13 @@ export const SelectDropDown: Story = {
   args: {
     appearance: 'none',
     background: '#fff',
-    border: '1px solid #c2d1d9',
+    border: '3px solid #c2d1d9',
+    borderRadius: '10px',
     color: 'black',
     width: '10vmax',
+    height: '10vmin',
+    fontFamily: 'Ubuntu',
+    fontSize: '1.2rem',
     data: [
       { value: 'React', name: 'React' },
       { value: 'Vue', name: 'Vue' },

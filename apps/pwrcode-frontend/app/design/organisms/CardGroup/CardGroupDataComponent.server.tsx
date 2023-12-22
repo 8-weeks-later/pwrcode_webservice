@@ -1,6 +1,7 @@
 'use client';
+import styled from '@emotion/styled';
 
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import { Text } from '../../atoms/Text/Text';
 import { CustomLink } from '../../atoms/Link/Link';
 
@@ -32,7 +33,7 @@ import {
 } from '@tanstack/react-query';
 import { atomsWithQuery } from 'jotai-tanstack-query';
 
-// import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
 async function getCardData() {
   const response = await fetch('http://localhost:4000/search', {
@@ -106,6 +107,31 @@ export function CardGroupDataServerComponent(
   );
 }
 
+const StyledMainComponent = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* animation: 30s fadein 1s infinite running slideintest; */
+  /* &:hover {
+    animation-play-state: paused;
+  } */
+  & > div {
+    /* transform: translate(100vmin, 0px); */
+    /* animation: 5s ease-in infinite normal forwards slidein; */
+    position: absolute;
+    height: 75vmin;
+  }
+`;
+
+const variants = {
+  open: { x: 0, y: 0, zIndex: 3 },
+  closed: { x: '1vmax', y: '1vmax', zIndex: 2 },
+  boxed: { x: '0vw', y: '70vh', zIndex: 1 },
+};
+
 export function CardGroupMainDataServerComponent(
   props: CardDataServerComponentProps,
 ) {
@@ -124,18 +150,38 @@ export function CardGroupMainDataServerComponent(
     throw new Error('Failed to fetch');
   }
 
+  const [cardsState, setCardsState] = useState([1, 0, -1]);
+
   return (
-    <>
-      {data?.hits?.map((item) => {
+    <StyledMainComponent>
+      {data?.hits?.map((item, index) => {
         return (
-          <Card {...MainCard.args} data={item}>
-            <Text {...ReactText.args} text={item.title} />
-            <TextArea {...SearchTextArea.args} text={item.content} />
-            <CustomLink {...MainLink.args} href={item.link} />
-          </Card>
+          <motion.div
+            variants={variants}
+            transition={{ type: 'spring', stiffness: 100 }}
+            onClick={() => {
+              const copyArr = new Array(3).fill(-1);
+              copyArr[index] = 1;
+              copyArr[(index + 1) % copyArr.length] = 0;
+              setCardsState(copyArr);
+            }}
+            animate={
+              cardsState[index] === 1
+                ? 'open'
+                : cardsState[index] === 0
+                ? 'closed'
+                : 'boxed'
+            }
+          >
+            <Card {...MainCard.args} data={item}>
+              <Text {...ReactText.args} text={item.title} />
+              <TextArea {...SearchTextArea.args} text={item.content} />
+              <CustomLink {...MainLink.args} href={item.link} />
+            </Card>
+          </motion.div>
         );
       })}
-    </>
+    </StyledMainComponent>
   );
 }
 

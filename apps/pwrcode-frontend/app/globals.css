@@ -161,13 +161,12 @@ a {
   font-weight: 400;
 }
 
-@keyframes slideintest {
-  from {
-    transform: translate(0px, -100vmin);
+/* @keyframes slidein {
+  0% {
+    transform: translate(100vmin, 0px);
   }
 
-  to {
-    /* height: 1v; */
-    transform: translate(0px, 100vmin);
+  50% {
+    transform: translate(0px, 0px);
   }
-}
+} */

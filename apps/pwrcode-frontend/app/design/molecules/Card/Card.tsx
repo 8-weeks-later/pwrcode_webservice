@@ -23,7 +23,6 @@ export interface CardProps extends PropsWithChildren {
 }
 
 export function Card(props: CardProps) {
-
   return (
     <Component
       width={props.width}

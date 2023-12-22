@@ -38,6 +38,8 @@ export const MainCardGroup: Story = {
     // primary: true,
     width: '35vmax',
     padding: '1.17rem',
+    justifyContent: 'center',
+    alignItems: 'center',
     children: (
       <>
         <CardGroupMainDataServerComponent />
@@ -51,6 +53,7 @@ export const SearchCardGroupStory: Story = {
     width: '80vmax',
     justifyContent: 'stretch',
     alignItems: 'center',
+    gap: '10px',
     padding: '6.03vmax 1.158vmax 10px 1.158vmax',
     overflow: 'scroll',
     children: <CardGroupSearchDataServerComponent />,
