@@ -11,8 +11,6 @@ import {
   CardGroupSearchDataServerComponent,
   ResponseBodyProps,
 } from './CardGroupDataComponent.server';
-import { useAtomValue } from 'jotai';
-import { searchKeywordAtom } from '@/app/state';
 
 export interface CardGroupProps extends PropsWithChildren {
   children?: ReactElement;
@@ -60,6 +58,13 @@ const Component = styled.div<CardGroupProps>`
   align-items: ${(props) => props.alignItems};
 
   &::-webkit-scrollbar {
-    display: none;
+    background: #f2f5f7;
+
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ebe3d5;
+    border: 1px solid black;
+    border-radius: 10px;
   }
 `;

@@ -18,6 +18,9 @@ export interface LinkProps {
   whiteSpace?: string;
   textDecorationLine?: string;
   color?: string;
+  padding?: string;
+  borderRadius?: string;
+  border?: string;
 }
 
 export function CustomLink(props: LinkProps) {
@@ -32,6 +35,9 @@ export function CustomLink(props: LinkProps) {
       whiteSpace={props.whiteSpace}
       textDecorationLine={props.textDecorationLine}
       color={props.color}
+      padding={props.padding}
+      borderRadius={props.borderRadius}
+      border={props.border}
     >
       <Link href={`/${props.href}`}>{props.text}</Link>
     </Component>
@@ -47,6 +53,9 @@ const Component = styled.div<LinkProps>`
   white-space: ${(props) => props.whiteSpace};
   text-decoration-line: ${(props) => props.textDecorationLine};
   color: ${(props) => props.color};
+  padding: ${(props) => props.padding};
+  border: ${(props) => props.border};
+  border-radius: ${(props) => props.borderRadius};
   &::after {
     content: ' ${(props) => props.afterIcon}';
     color: black;

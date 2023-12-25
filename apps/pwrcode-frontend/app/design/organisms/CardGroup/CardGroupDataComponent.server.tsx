@@ -129,7 +129,7 @@ const StyledMainComponent = styled.div`
 const variants = {
   open: { x: 0, y: 0, zIndex: 3 },
   closed: { x: '1vmax', y: '1vmax', zIndex: 2 },
-  boxed: { x: '0vw', y: '70vh', zIndex: 1 },
+  boxed: { x: '0vw', y: '70vh', zIndex: 4 },
 };
 
 export function CardGroupMainDataServerComponent(
@@ -185,8 +185,6 @@ export function CardGroupMainDataServerComponent(
   );
 }
 
-// const reusedAtom = atom((get) => get(searchKeywordAtom);
-
 export function CardGroupSearchDataServerComponent(
   props: CardDataServerComponentProps,
 ) {
@@ -220,5 +218,3 @@ export function CardGroupSearchDataServerComponent(
     </>
   );
 }
-
-// const Component = styled.div<CardDataServerComponentProps>``;

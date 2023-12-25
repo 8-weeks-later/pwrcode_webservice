@@ -57,9 +57,22 @@ export function TextArea(props: TextAreaProps) {
             const { src, ...rest } = props;
             return <img src={src} width={'100vw'} {...rest} />;
           },
+          //           <code class="language-javascript">
           code(props) {
             const { children, className, node, ...rest } = props;
-            return <Editor defaultValue={String(children)} />;
+            const language = className?.match(/language-(\w+)/)?.at(1);
+            return (
+              <Editor
+                defaultValue={String(children)}
+                defaultLanguage={language}
+                options={{
+                  // domReadOnly: 'false'
+                  codeLens: 'false',
+                  fontSize: 20,
+                }}
+                theme="vs-dark"
+              />
+            );
           },
         }}
         remarkPlugins={[remarkMdx, remarkBreaks]}
@@ -89,8 +102,13 @@ const Component = styled.div<TextAreaProps>`
   grid-template-columns: ${(props) => props.gridTemplateColumns};
   gap: ${(props) => props.gap};
   grid-auto-flow: ${(props) => props.gridAutoFlow};
-
+  cursor: pointer;
   &::-webkit-scrollbar {
-    display: none;
+    background: #f2f5f7;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ebe3d5;
+    border-radius: 10px;
   }
 `;

@@ -28,9 +28,13 @@ export const MainLink: Story = {
     afterIcon: '->',
     fontStyle: 'normal',
     fontWeight: '400',
+    fontSize: '1.5vmin',
     whiteSpace: 'nowrap',
     textDecorationLine: 'none',
     color: 'black',
+    padding: '1vh 2vw',
+    border: '3px solid #c2d1d9',
+    borderRadius: '10px',
   },
 };
 

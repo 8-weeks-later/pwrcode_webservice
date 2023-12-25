@@ -31,7 +31,7 @@ export const MainTextArea: Story = {
     textAlign: 'center',
     flexShrink: '0',
     flex: '1 1 100%',
-    overflow: 'scroll',
+    overflow: 'auto',
     color: '#505D68',
   },
 };
@@ -48,7 +48,7 @@ export const SearchTextArea: Story = {
     flexShrink: '0',
     flex: '1 1 100%',
     color: '#505D68',
-    overflow: 'scroll',
+    overflow: 'auto',
     alignSelf: 'stretch',
   },
 };
