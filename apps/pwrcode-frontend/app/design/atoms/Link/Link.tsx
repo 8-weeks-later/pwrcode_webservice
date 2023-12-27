@@ -3,8 +3,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import Link from 'next/link';
-import { Theme } from '@emotion/react';
-import { useRouter } from 'next/navigation';
 
 export interface LinkProps {
   href?: string;
@@ -39,7 +37,7 @@ export function CustomLink(props: LinkProps) {
       borderRadius={props.borderRadius}
       border={props.border}
     >
-      <Link href={`/${props.href}`}>{props.text}</Link>
+      <Link href={`${props.href}`}>{props.text}</Link>
     </Component>
   );
 }
@@ -59,5 +57,8 @@ const Component = styled.div<LinkProps>`
   &::after {
     content: ' ${(props) => props.afterIcon}';
     color: black;
+  }
+  &:hover {
+    background: #c2d1d9;
   }
 `;

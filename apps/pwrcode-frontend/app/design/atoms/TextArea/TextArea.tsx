@@ -63,6 +63,7 @@ export function TextArea(props: TextAreaProps) {
             const language = className?.match(/language-(\w+)/)?.at(1);
             return (
               <Editor
+                height="50vmin"
                 defaultValue={String(children)}
                 defaultLanguage={language}
                 options={{
