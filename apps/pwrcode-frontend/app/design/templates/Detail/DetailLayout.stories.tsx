@@ -14,7 +14,6 @@ import { MainLogoGroup } from '../../organisms/LogoGroup/LogoGroup.stories';
 import {
   DetailCardGroup,
   MainCardGroup,
-  SearchCardGroup,
 } from '../../organisms/CardGroup/CardGroup.stories';
 import { DetailLayout } from './DetailLayout';
 
