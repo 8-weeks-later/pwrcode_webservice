@@ -4953,10 +4953,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.12.1, @tanstack/query-core@npm:^5.12.1":
+"@tanstack/query-core@npm:5.12.1":
   version: 5.12.1
   resolution: "@tanstack/query-core@npm:5.12.1"
   checksum: 46d142354c362cb588fdeb4158cb807b8822a1333d1bada3781b9bad7ac8ea98ee7264139cb85021a6e959a795d90f3c2e1a9fa5958c13b6d6bfe5c38f74808c
+  languageName: node
+  linkType: hard
+
+"@tanstack/query-core@npm:^5.14.2":
+  version: 5.14.2
+  resolution: "@tanstack/query-core@npm:5.14.2"
+  checksum: 1171510ecfaf51693de021c164dc94297260bd88f560705cda2cae460c869cf1bbe5f08389fcf36d69c3b8cfe6b24fec492bfa962afdbaabbe3c9e99065df6fd
   languageName: node
   linkType: hard
 
@@ -12058,13 +12065,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jotai-tanstack-query@npm:^0.7.2":
-  version: 0.7.2
-  resolution: "jotai-tanstack-query@npm:0.7.2"
+"jotai-tanstack-query@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "jotai-tanstack-query@npm:0.8.1"
   peerDependencies:
     "@tanstack/query-core": "*"
     jotai: ">=1.11.0"
-  checksum: 3e910f7ec283c67f9d1fd2c2132ea3cb26d289c51a6082a495e33e56f3fcfe2862f5a2a241335c4d92845ba74121ccd1e7d3f0dd94af234f2b48adeca9a261de
+    wonka: ^6.3.4
+  checksum: 85ec9129ab164bd66ee4aa1d86ef720ad08cbf55c26cb409ce45ca694d482db3ae5a52da8b9325a48c80d3e4dc7abc886f3b5fe05889b62df1fa083ea4344bd0
   languageName: node
   linkType: hard
 
@@ -15562,7 +15570,7 @@ __metadata:
     "@storybook/nextjs": "npm:^7.5.3"
     "@storybook/react": "npm:^7.5.3"
     "@storybook/testing-library": "npm:^0.2.2"
-    "@tanstack/query-core": "npm:^5.12.1"
+    "@tanstack/query-core": "npm:^5.14.2"
     "@tanstack/react-query": "npm:^5.12.2"
     "@tanstack/react-query-devtools": "npm:^5.12.2"
     "@types/mdx": "npm:^2.0.10"
@@ -15579,7 +15587,7 @@ __metadata:
     eslint-plugin-storybook: "npm:^0.6.15"
     framer-motion: "npm:^10.16.4"
     jotai: "npm:^2.5.1"
-    jotai-tanstack-query: "npm:^0.7.2"
+    jotai-tanstack-query: "npm:^0.8.1"
     next: "npm:14.0.1"
     next-mdx-remote: "npm:^4.4.1"
     react: "npm:^18"
@@ -15593,6 +15601,7 @@ __metadata:
     storybook: "npm:^7.5.3"
     typescript: "npm:^5"
     webpack: "npm:^5.89.0"
+    wonka: "npm:^6.3.4"
   languageName: unknown
   linkType: soft
 
@@ -18937,6 +18946,13 @@ __metadata:
   dependencies:
     execa: "npm:^4.0.2"
   checksum: 5c0ce2603a85e25e9a5c78eb1ef646aac7036da2fb942643f2120b11fc33ed94fbcdd340b2abbf27daa522efc9e52df36fe95b1c03cd9acd8d6c6c39f88f106b
+  languageName: node
+  linkType: hard
+
+"wonka@npm:^6.3.4":
+  version: 6.3.4
+  resolution: "wonka@npm:6.3.4"
+  checksum: 77329eea673da07717476e1b8f1a22f1e1a4f261bb9a58fa446c03d3da13dbd5b254664f8aded5928d953f33ee5b399a17a4f70336e8b236e478209c0e78cda4
   languageName: node
   linkType: hard
 

@@ -16,35 +16,25 @@ import { MainLink } from '../../atoms/Link/Link.stories';
 import { Card } from '../../molecules/Card/Card';
 import { CardGroup } from './CardGroup';
 import { MainCard, SearchCardStory } from '../../molecules/Card/Card.stories';
-import { atom, useAtom, useAtomValue } from 'jotai';
-import {
-  SearchKeywordProps,
-  readAndWriteSearchKeywordAtom,
-  searchKeywordAtom,
-  testAtom,
-} from '@/app/state';
-import { useHydrateAtoms } from 'jotai/utils';
-import {
-  QueryClient,
-  QueryClientProvider,
-  QueryKey,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query';
-import { atomsWithQuery } from 'jotai-tanstack-query';
+import { useAtom } from 'jotai';
+import { testAtom } from '@/app/state';
+import { useQuery } from '@tanstack/react-query';
 
 import { motion } from 'framer-motion';
 
 async function getCardData() {
-  const response = await fetch('http://localhost:4000/search', {
-    method: 'POST',
-    body: JSON.stringify({
-      text: '상태',
-    }),
-  });
+  const response = await fetch(
+    `http://${process.env.NEXT_PUBLIC_BACKEND_API}/search`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        text: '상태',
+      }),
+    },
+  );
 
   if (!response.ok) {
-    throw new Error('Failed to fetch');
+    // throw new Error('Failed to fetch');
   }
 
   return response.json();
@@ -70,7 +60,7 @@ export function CardGroupDataServerComponent(
   const { isPending, error, data } = useQuery({
     queryKey: ['repoData'],
     queryFn: (): Promise<ResponseBodyProps> =>
-      fetch('http://localhost:4000/search', {
+      fetch(`http://${process.env.NEXT_PUBLIC_BACKEND_API}/search`, {
         method: 'POST',
         body: JSON.stringify({
           text: '상태',
@@ -79,7 +69,7 @@ export function CardGroupDataServerComponent(
   });
 
   if (error) {
-    throw new Error('Failed to fetch');
+    // throw new Error('Failed to fetch');
   }
 
   if (data?.hits?.length === 0) {
@@ -138,7 +128,7 @@ export function CardGroupMainDataServerComponent(
   const { isPending, error, data } = useQuery({
     queryKey: ['repoData'],
     queryFn: (): Promise<ResponseBodyProps> =>
-      fetch('http://localhost:4000/search', {
+      fetch(`http://${process.env.NEXT_PUBLIC_BACKEND_API}/search`, {
         method: 'POST',
         body: JSON.stringify({
           text: '상태',
@@ -147,7 +137,7 @@ export function CardGroupMainDataServerComponent(
   });
 
   if (error) {
-    throw new Error('Failed to fetch');
+    // throw new Error('Failed to fetch');
   }
 
   const [cardsState, setCardsState] = useState([1, 0, -1]);
@@ -188,7 +178,11 @@ export function CardGroupMainDataServerComponent(
 export function CardGroupSearchDataServerComponent(
   props: CardDataServerComponentProps,
 ) {
-  const [data] = useAtom(testAtom);
+  const [{ data, isPending, isError }] = useAtom(testAtom);
+
+  if (isError) {
+    return <></>;
+  }
 
   if (data?.hits?.length === 0) {
     return (

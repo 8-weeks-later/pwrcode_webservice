@@ -1,5 +1,5 @@
 import { atom, useSetAtom } from 'jotai';
-import { atomsWithQuery } from 'jotai-tanstack-query';
+import { atomWithQuery } from 'jotai-tanstack-query';
 import { ResponseBodyProps } from '../design/organisms/CardGroup/CardGroupDataComponent.server';
 import { QueryKey } from '@tanstack/react-query';
 
@@ -13,7 +13,7 @@ export const searchKeywordAtom = atom<SearchKeywordProps>({
   keyword: '',
 });
 
-export const [testAtom] = atomsWithQuery((get) => ({
+export const testAtom = atomWithQuery((get) => ({
   queryKey: ['articles', get(searchKeywordAtom).keyword],
   queryFn: async ({
     queryKey: [, searchKeyword],
@@ -22,15 +22,18 @@ export const [testAtom] = atomsWithQuery((get) => ({
   }): Promise<ResponseBodyProps> => {
     console.log('QUERY: ', searchKeyword, get(searchKeywordAtom).keyword);
 
-    const res = await fetch('http://localhost:4000/search', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    const res = await fetch(
+      `http://${process.env.NEXT_PUBLIC_BACKEND_API}/search`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text: searchKeyword,
+        }),
       },
-      body: JSON.stringify({
-        text: searchKeyword,
-      }),
-    });
+    );
 
     return res.json();
   },
