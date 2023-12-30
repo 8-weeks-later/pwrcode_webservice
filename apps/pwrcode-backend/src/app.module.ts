@@ -11,7 +11,7 @@ import { SearchModule } from './modules/search/search.module';
   imports: [
     ConfigModule.forRoot({
       // envFilePath: ['.env.development', '.env.production'],
-      envFilePath: [(process.env.NODE_ENV === 'production') ? '.env.production' :  '.env.development'],
+      envFilePath: ['.env.production'],
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
