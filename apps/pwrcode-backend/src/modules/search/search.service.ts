@@ -6,7 +6,7 @@ export class SearchService {
   private _client: MeiliSearch;
   constructor() {
     this._client = new MeiliSearch({
-      host: 'http://127.0.0.1:7700/',
+      host: `http://${process.env.MEILISEARCH_HOST}/`,
     });
   }
 
