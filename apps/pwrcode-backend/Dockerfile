@@ -33,6 +33,18 @@ WORKDIR /usr/src/app
 # Set NODE_ENV environment variable
 ENV NODE_ENV production
 
+
+ARG DATABASE_HOST
+ARG DATABASE_USER
+ARG DATABASE_PASS
+ARG MEILISEARCH_HOST
+
+ENV DATABASE_HOST $DATABASE_HOST
+ENV DATABASE_USER $DATABASE_USER
+ENV DATABASE_PASS $DATABASE_PASS
+ENV MEILISEARCH_HOST $MEILISEARCH_HOST
+
+
 COPY --chown=node:node package*.json ./
 
 # In order to run `npm run build` we need access to the Nest CLI which is a dev dependency. In the previous development stage we ran `npm ci` which installed all dependencies, so we can copy over the node_modules directory from the development image
