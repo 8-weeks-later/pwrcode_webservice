@@ -33,17 +33,6 @@ WORKDIR /usr/src/app
 # Set NODE_ENV environment variable
 ENV NODE_ENV production
 
-
-ARG DATABASE_HOST
-ENV DATABASE_HOST ${DATABASE_HOST}
-ARG DATABASE_USER
-ENV DATABASE_USER ${DATABASE_USER}
-ARG DATABASE_PASS
-ENV DATABASE_PASS ${DATABASE_PASS}
-ARG MEILISEARCH_HOST
-ENV MEILISEARCH_HOST ${MEILISEARCH_HOST}
-
-
 COPY --chown=node:node package*.json ./
 
 # In order to run `npm run build` we need access to the Nest CLI which is a dev dependency. In the previous development stage we ran `npm ci` which installed all dependencies, so we can copy over the node_modules directory from the development image
@@ -58,7 +47,7 @@ RUN yarn build
 # Running `npm ci` removes the existing node_modules directory and passing in --only=production ensures that only the production dependencies are installed. This ensures that the node_modules directory is as optimized as possible
 # RUN npm ci --only=production && npm cache clean --force
 # RUN npm ci
-RUN yarn install
+# RUN yarn install
 
 USER node
 
@@ -71,6 +60,23 @@ FROM node:18-alpine As production
 # Copy the bundled code from the build stage to the production image
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
+
+# ENV DATABASE_HOST ${DATABASE_HOST}
+ARG DATABASE_HOST
+ENV DATABASE_HOST ${DATABASE_HOST}
+CMD echo $DATABASE_HOST >> .env.production
+
+ARG DATABASE_USER
+ENV DATABASE_USER ${DATABASE_USER}
+CMD echo $DATABASE_USER >> .env.production
+
+ARG DATABASE_PASS
+ENV DATABASE_PASS ${DATABASE_PASS}
+CMD echo $DATABASE_PASS >> .env.production
+
+ARG MEILISEARCH_HOST
+ENV MEILISEARCH_HOST ${MEILISEARCH_HOST}
+CMD echo $MEILISEARCH_HOST >> .env.production
 
 # Start the server using the production build
 CMD [ "node", "dist/main.js" ]
