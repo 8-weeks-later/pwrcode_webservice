@@ -57,6 +57,14 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+ARG NEXT_PUBLIC_BACKEND_API
+ENV NEXT_PUBLIC_BACKEND_API ${NEXT_PUBLIC_BACKEND_API}
+CMD echo $NEXT_PUBLIC_BACKEND_API >> .env.production
+
+ARG NEXT_PUBLIC_FILE_API
+ENV NEXT_PUBLIC_FILE_API ${NEXT_PUBLIC_FILE_API}
+CMD echo $NEXT_PUBLIC_FILE_API >> .env.production
+
 USER nextjs
 
 EXPOSE 3000

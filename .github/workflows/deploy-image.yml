@@ -47,3 +47,5 @@ jobs:
             "DATABASE_USER=${{ secrets.DATABASE_USER }}"
             "DATABASE_PASS=${{ secrets.DATABASE_PASS }}"
             "MEILISEARCH_HOST=${{ secrets.MEILISEARCH_HOST }}"
+            "NEXT_PUBLIC_BACKEND_API=${{ secrets.NEXT_PUBLIC_BACKEND_API }}"
+            "NEXT_PUBLIC_FILE_API=${{ secrets.NEXT_PUBLIC_FILE_API }}"
