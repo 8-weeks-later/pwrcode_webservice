@@ -42,7 +42,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64, linux/arm64, linux/arm64/v8
-          secrets: |
+          build-args: |
             "DATABASE_HOST=${{ secrets.DATABASE_HOST }}"
             "DATABASE_USER=${{ secrets.DATABASE_USER }}"
             "DATABASE_PASS=${{ secrets.DATABASE_PASS }}"
