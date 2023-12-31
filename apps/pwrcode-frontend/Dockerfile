@@ -28,6 +28,14 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+ARG NEXT_PUBLIC_BACKEND_API
+ENV NEXT_PUBLIC_BACKEND_API ${NEXT_PUBLIC_BACKEND_API}
+CMD echo $NEXT_PUBLIC_BACKEND_API >> .env.production
+
+ARG NEXT_PUBLIC_FILE_API
+ENV NEXT_PUBLIC_FILE_API ${NEXT_PUBLIC_FILE_API}
+CMD echo $NEXT_PUBLIC_FILE_API >> .env.production
+
 RUN yarn build
 # RUN ls -l
 RUN ls -al .next
@@ -56,14 +64,6 @@ RUN chown nextjs:nodejs .next
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-ARG NEXT_PUBLIC_BACKEND_API
-ENV NEXT_PUBLIC_BACKEND_API ${NEXT_PUBLIC_BACKEND_API}
-CMD echo $NEXT_PUBLIC_BACKEND_API >> .env.production
-
-ARG NEXT_PUBLIC_FILE_API
-ENV NEXT_PUBLIC_FILE_API ${NEXT_PUBLIC_FILE_API}
-CMD echo $NEXT_PUBLIC_FILE_API >> .env.production
 
 USER nextjs
 
