@@ -29,18 +29,6 @@ jobs:
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: ${{ env.REGISTRY }}/IMHOJEONG/${{ matrix.context }}
-      - name: Set up Env File
-        shell: bash
-        run: |
-          echo "DATABASE_HOST=$DATABASE_HOST" >> .env.production
-          echo "DATABASE_USER=$DATABASE_USER" >> .env.production
-          echo "DATABASE_PASS=$DATABASE_PASS" >> .env.production
-          echo "MEILISEARCH_HOST=$MEILISEARCH_HOST" >> .env.production
-        env:
-          DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
-          DATABASE_USER: ${{ secrets.DATABASE_USER }}
-          DATABASE_PASS: ${{ secrets.DATABASE_PASS }}
-          MEILISEARCH_HOST: ${{ secrets.MEILISEARCH_HOST }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
@@ -54,3 +42,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64, linux/arm64, linux/arm64/v8
+          secrets: |
+            "DATABASE_HOST=${{ secrets.DATABASE_HOST }}"
+            "DATABASE_USER=${{ secrets.DATABASE_USER }}"
+            "DATABASE_PASS=${{ secrets.DATABASE_PASS }}"
+            "MEILISEARCH_HOST=${{ secrets.MEILISEARCH_HOST }}"
