@@ -42,7 +42,7 @@ export const NavbarSearchLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
     text: 'Search'.toUpperCase(),
-    href: 'search',
+    href: '/search',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '0.75rem',
@@ -55,7 +55,7 @@ export const NavbarKnowledgeLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
     text: 'Knowledge'.toUpperCase(),
-    href: 'knowledge',
+    href: '/knowledge',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '0.75rem',
@@ -68,7 +68,7 @@ export const NavbarComputerScienceLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
     text: 'Computer Science'.toUpperCase(),
-    href: 'computer_science',
+    href: '/computer_science',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '0.75rem',
@@ -81,7 +81,7 @@ export const NavbarCodeBoxLink: Story = {
   args: {
     fontFamily: 'Ubuntu',
     text: 'CodeBox'.toUpperCase(),
-    href: 'codebox',
+    href: '/codebox',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '0.75rem',
